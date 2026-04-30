@@ -8,7 +8,11 @@ export type Tag =
   | "Sports"
   | "Academic";
 
-export type Status = "Public" | "Private" | "In progress";
+// "Live"        — clickable, opens a working app
+// "Code"        — opens to public source on GitHub
+// "Private"     — neither a live URL nor public source available yet
+// "In progress" — being built, not ready to show
+export type Status = "Live" | "Code" | "Private" | "In progress";
 
 export type Project = {
   id: string;
@@ -30,8 +34,8 @@ export const PROJECTS: Project[] = [
     blurb:
       "AI-powered flashcards with spaced repetition and dual-coding visuals.",
     tags: ["Education", "AI"],
-    url: "https://github.com/massimofurness13/ai-flashcard-app",
-    status: "Private",
+    url: "https://flashmind-35q4.onrender.com",
+    status: "Live",
     year: "2026",
     image: "/projects/flashmind.svg",
   },
@@ -54,8 +58,8 @@ export const PROJECTS: Project[] = [
     blurb:
       "End-to-end trading system with custom front-end and back-end.",
     tags: ["Finance", "Data"],
-    url: "https://github.com/massimofurness13/trading-dashboard",
-    status: "Private",
+    url: "https://trading-dashboard-j2wt.onrender.com",
+    status: "Live",
     year: "2026",
     image: "/projects/trading-dashboard.svg",
   },
@@ -67,7 +71,7 @@ export const PROJECTS: Project[] = [
       "Geospatial land-value scoring engine for Medellín.",
     tags: ["Real Estate", "Data"],
     url: "https://github.com/massimofurness13/medellin_land_scorer",
-    status: "Private",
+    status: "Code",
     year: "2026",
     image: "/projects/medellin-land.svg",
   },
@@ -78,8 +82,8 @@ export const PROJECTS: Project[] = [
     blurb:
       "Interactive maths progress dashboard for PTM students.",
     tags: ["Education"],
-    url: "https://github.com/massimofurness13/PTM_maths_dashboard",
-    status: "Public",
+    url: "https://massimofurness13.github.io/PTM_maths_dashboard/",
+    status: "Live",
     year: "2026",
     image: "/projects/ptm-maths.svg",
   },
@@ -90,8 +94,8 @@ export const PROJECTS: Project[] = [
     blurb:
       "Grade 5 maths curriculum tracker and practice hub.",
     tags: ["Education"],
-    url: "https://github.com/massimofurness13/grade5-maths-dashboard",
-    status: "Public",
+    url: "https://massimofurness13.github.io/grade5-maths-dashboard/",
+    status: "Live",
     year: "2026",
     image: "/projects/grade5-maths.svg",
   },
@@ -101,7 +105,7 @@ export const PROJECTS: Project[] = [
     title: "Q-Tracker",
     blurb: "Personal quantitative tracking tool.",
     tags: ["Data"],
-    url: "https://github.com/massimofurness13/q-tracker",
+    url: "#",
     status: "Private",
     year: "2026",
     image: "/projects/q-tracker.svg",
@@ -113,7 +117,7 @@ export const PROJECTS: Project[] = [
     blurb: "Selected projects from MSc coursework.",
     tags: ["Academic"],
     url: "https://github.com/massimofurness13/MSc-Projects",
-    status: "Public",
+    status: "Code",
     year: "2023",
     image: "/projects/msc-projects.svg",
   },

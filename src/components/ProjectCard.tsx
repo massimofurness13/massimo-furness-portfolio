@@ -1,32 +1,33 @@
 import Image from "next/image";
 import type { Project } from "@/data/projects";
 
+const STATUS_PILL_CLASSES: Record<Project["status"], string> = {
+  Live: "bg-accent/15 text-accent",
+  "In progress": "bg-accent/10 text-accent",
+  Code: "bg-paper/85 text-ink",
+  Private: "bg-paper/85 text-ink-muted",
+};
+
 export function ProjectCard({ project }: { project: Project }) {
-  const isLive = project.url !== "#";
-  const Tag = isLive ? "a" : "div";
+  const hasLink = project.url !== "#";
+  const Tag = hasLink ? "a" : "div";
 
   return (
     <article className="group/card">
       <Tag
-        {...(isLive
+        {...(hasLink
           ? {
               href: project.url,
               target: "_blank",
               rel: "noopener noreferrer",
             }
           : {})}
-        className={`block ${isLive ? "cursor-pointer" : "cursor-default"}`}
+        className={`block ${hasLink ? "cursor-pointer" : "cursor-default"}`}
       >
         <div className="relative overflow-hidden bg-paper-deep aspect-[16/10] border border-rule">
           {/* status pill */}
           <span
-            className={`absolute z-10 top-3 left-3 font-mono text-[9.5px] tracking-[0.22em] uppercase px-2 py-1 backdrop-blur-sm ${
-              project.status === "In progress"
-                ? "bg-accent/15 text-accent"
-                : project.status === "Public"
-                  ? "bg-paper/85 text-ink"
-                  : "bg-paper/85 text-ink-muted"
-            }`}
+            className={`absolute z-10 top-3 left-3 font-mono text-[9.5px] tracking-[0.22em] uppercase px-2 py-1 backdrop-blur-sm ${STATUS_PILL_CLASSES[project.status]}`}
           >
             {project.status}
           </span>
@@ -56,14 +57,14 @@ export function ProjectCard({ project }: { project: Project }) {
             <h3 className="font-serif text-[clamp(1.65rem,2.6vw,2.05rem)] leading-[1.05] text-ink">
               <span className="relative inline-block">
                 {project.title}
-                {isLive && (
+                {hasLink && (
                   <span
                     aria-hidden
                     className="absolute left-0 right-0 -bottom-0.5 h-px bg-accent origin-left scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 ease-out"
                   />
                 )}
               </span>
-              {isLive && (
+              {hasLink && (
                 <span
                   aria-hidden
                   className="ml-2 inline-block translate-y-[-0.2em] text-[0.5em] text-ink-faint group-hover/card:text-accent transition-colors duration-300"
