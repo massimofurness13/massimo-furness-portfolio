@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <!-- court outer -->
+  <rect x="180" y="80" width="440" height="340" fill="#ede8dd" stroke="#14110d" stroke-width="1.6"/>
+  <!-- glass walls (double line at ends) -->
+  <rect x="174" y="74" width="452" height="352" fill="none" stroke="#14110d" stroke-width="0.5" opacity="0.5"/>
+  <!-- net -->
+  <line x1="180" y1="250" x2="620" y2="250" stroke="#14110d" stroke-width="2"/>
+  <g stroke="#14110d" stroke-width="0.6" opacity="0.5">
+    <line x1="200" y1="244" x2="200" y2="256"/>
+    <line x1="240" y1="244" x2="240" y2="256"/>
+    <line x1="280" y1="244" x2="280" y2="256"/>
+    <line x1="320" y1="244" x2="320" y2="256"/>
+    <line x1="360" y1="244" x2="360" y2="256"/>
+    <line x1="400" y1="244" x2="400" y2="256"/>
+    <line x1="440" y1="244" x2="440" y2="256"/>
+    <line x1="480" y1="244" x2="480" y2="256"/>
+    <line x1="520" y1="244" x2="520" y2="256"/>
+    <line x1="560" y1="244" x2="560" y2="256"/>
+    <line x1="600" y1="244" x2="600" y2="256"/>
+  </g>
+  <!-- service boxes -->
+  <line x1="260" y1="80" x2="260" y2="250" stroke="#14110d" stroke-width="1"/>
+  <line x1="540" y1="80" x2="540" y2="250" stroke="#14110d" stroke-width="1"/>
+  <line x1="260" y1="250" x2="260" y2="420" stroke="#14110d" stroke-width="1"/>
+  <line x1="540" y1="250" x2="540" y2="420" stroke="#14110d" stroke-width="1"/>
+  <line x1="260" y1="165" x2="540" y2="165" stroke="#14110d" stroke-width="1"/>
+  <line x1="260" y1="335" x2="540" y2="335" stroke="#14110d" stroke-width="1"/>
+  <line x1="400" y1="80" x2="400" y2="165" stroke="#14110d" stroke-width="1"/>
+  <line x1="400" y1="335" x2="400" y2="420" stroke="#14110d" stroke-width="1"/>
+  <!-- ball + trajectory -->
+  <path d="M 320 350 Q 400 200 500 180" fill="none" stroke="#d2778e" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+  <circle cx="500" cy="180" r="6" fill="#d2778e"/>
+</svg>

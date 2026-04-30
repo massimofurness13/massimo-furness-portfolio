@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <!-- horizontal grid -->
+  <g stroke="#14110d" stroke-width="0.5" opacity="0.12">
+    <line x1="120" y1="140" x2="700" y2="140"/>
+    <line x1="120" y1="200" x2="700" y2="200"/>
+    <line x1="120" y1="260" x2="700" y2="260"/>
+    <line x1="120" y1="320" x2="700" y2="320"/>
+  </g>
+  <!-- axes -->
+  <line x1="120" y1="380" x2="700" y2="380" stroke="#14110d" stroke-width="1.2"/>
+  <line x1="120" y1="100" x2="120" y2="380" stroke="#14110d" stroke-width="1.2"/>
+  <!-- bars -->
+  <g stroke="#14110d" stroke-width="1.2">
+    <rect x="170" y="320" width="58" height="60" fill="none"/>
+    <rect x="248" y="290" width="58" height="90" fill="none"/>
+    <rect x="326" y="250" width="58" height="130" fill="none"/>
+    <rect x="404" y="220" width="58" height="160" fill="none"/>
+    <rect x="482" y="180" width="58" height="200" fill="#d2778e" fill-opacity="0.12"/>
+    <rect x="560" y="140" width="58" height="240" fill="#d2778e" fill-opacity="0.22"/>
+  </g>
+  <!-- target dot -->
+  <circle cx="589" cy="120" r="3.5" fill="#d2778e"/>
+  <line x1="589" y1="125" x2="589" y2="138" stroke="#d2778e" stroke-width="1"/>
+  <!-- y labels -->
+  <g font-family="ui-monospace, monospace" font-size="9" fill="#14110d" opacity="0.45">
+    <text x="100" y="143" text-anchor="end">100</text>
+    <text x="100" y="203" text-anchor="end">75</text>
+    <text x="100" y="263" text-anchor="end">50</text>
+    <text x="100" y="323" text-anchor="end">25</text>
+    <text x="100" y="383" text-anchor="end">0</text>
+  </g>
+</svg>

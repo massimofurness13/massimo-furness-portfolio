@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="fm-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#14110d" stroke-width="0.4" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <rect width="800" height="500" fill="url(#fm-grid)"/>
+
+  <!-- back card -->
+  <g transform="rotate(-7 400 260)">
+    <rect x="220" y="120" width="360" height="240" rx="6" fill="#ede8dd" stroke="#14110d" stroke-width="1"/>
+  </g>
+  <!-- middle card -->
+  <g transform="rotate(3 400 250)">
+    <rect x="220" y="130" width="360" height="240" rx="6" fill="#f5f2ec" stroke="#14110d" stroke-width="1"/>
+  </g>
+  <!-- top card -->
+  <g transform="rotate(-1 400 240)">
+    <rect x="220" y="120" width="360" height="240" rx="6" fill="#f5f2ec" stroke="#14110d" stroke-width="1.4"/>
+    <line x1="240" y1="170" x2="380" y2="170" stroke="#14110d" stroke-width="1.4"/>
+    <line x1="240" y1="210" x2="540" y2="210" stroke="#14110d" stroke-width="0.6" opacity="0.45"/>
+    <line x1="240" y1="240" x2="540" y2="240" stroke="#14110d" stroke-width="0.6" opacity="0.45"/>
+    <line x1="240" y1="270" x2="510" y2="270" stroke="#14110d" stroke-width="0.6" opacity="0.45"/>
+    <line x1="240" y1="300" x2="540" y2="300" stroke="#14110d" stroke-width="0.6" opacity="0.45"/>
+    <line x1="240" y1="330" x2="460" y2="330" stroke="#14110d" stroke-width="0.6" opacity="0.45"/>
+    <!-- spark -->
+    <g transform="translate(540 145)">
+      <path d="M 0 -10 L 2.5 -2.5 L 10 0 L 2.5 2.5 L 0 10 L -2.5 2.5 L -10 0 L -2.5 -2.5 Z" fill="#d2778e"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <!-- topographic contour lines (irregular) -->
+  <g fill="none" stroke="#14110d" stroke-width="1" opacity="0.85">
+    <path d="M 80 250 C 180 110 320 80 460 130 C 600 180 700 240 720 320 C 700 400 540 440 380 420 C 220 400 100 360 80 250 Z"/>
+    <path d="M 140 260 C 220 160 340 140 450 180 C 580 220 660 270 670 330 C 650 380 520 410 380 395 C 240 380 150 340 140 260 Z"/>
+    <path d="M 200 270 C 260 200 350 190 440 220 C 540 250 600 290 610 330 C 590 370 500 385 380 375 C 270 370 210 320 200 270 Z"/>
+    <path d="M 260 280 C 300 230 370 225 430 245 C 500 265 540 295 545 325 C 530 355 470 370 380 365 C 300 360 270 325 260 280 Z"/>
+    <path d="M 310 290 C 340 260 390 256 425 270 C 470 285 495 305 498 325 C 488 345 450 360 380 355 C 330 352 315 320 310 290 Z"/>
+    <path d="M 350 305 C 370 290 400 290 420 300 C 445 312 458 322 460 332 C 452 348 425 354 380 350 C 355 348 350 322 350 305 Z"/>
+  </g>
+  <!-- horizontal accents (river / road) -->
+  <path d="M 120 380 Q 280 360 400 390 T 700 380" fill="none" stroke="#14110d" stroke-width="0.6" opacity="0.4" stroke-dasharray="6 4"/>
+  <!-- pin marker -->
+  <g transform="translate(440 255)">
+    <line x1="0" y1="0" x2="0" y2="-46" stroke="#d2778e" stroke-width="1.6"/>
+    <circle cx="0" cy="-50" r="6" fill="#d2778e"/>
+    <circle cx="0" cy="0" r="2.5" fill="#d2778e"/>
+  </g>
+  <!-- compass mini -->
+  <g transform="translate(680 100)" stroke="#14110d" stroke-width="1" fill="none" opacity="0.6">
+    <circle cx="0" cy="0" r="18"/>
+    <path d="M 0 -16 L 4 0 L 0 4 L -4 0 Z" fill="#14110d"/>
+    <text x="0" y="-22" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#14110d">N</text>
+  </g>
+</svg>

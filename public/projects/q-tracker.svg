@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <!-- grid -->
+  <g stroke="#14110d" stroke-width="0.5" opacity="0.08">
+    <line x1="120" y1="120" x2="700" y2="120"/>
+    <line x1="120" y1="200" x2="700" y2="200"/>
+    <line x1="120" y1="280" x2="700" y2="280"/>
+    <line x1="120" y1="360" x2="700" y2="360"/>
+    <line x1="240" y1="80" x2="240" y2="420"/>
+    <line x1="360" y1="80" x2="360" y2="420"/>
+    <line x1="480" y1="80" x2="480" y2="420"/>
+    <line x1="600" y1="80" x2="600" y2="420"/>
+  </g>
+  <!-- axes -->
+  <line x1="120" y1="420" x2="700" y2="420" stroke="#14110d" stroke-width="1"/>
+  <line x1="120" y1="80" x2="120" y2="420" stroke="#14110d" stroke-width="1"/>
+  <!-- trend -->
+  <line x1="150" y1="385" x2="680" y2="135" stroke="#14110d" stroke-width="0.6" stroke-dasharray="4 4" opacity="0.55"/>
+  <!-- scatter -->
+  <g fill="#14110d">
+    <circle cx="160" cy="380" r="3"/>
+    <circle cx="180" cy="395" r="3"/>
+    <circle cx="200" cy="358" r="3"/>
+    <circle cx="225" cy="370" r="3"/>
+    <circle cx="245" cy="345" r="3"/>
+    <circle cx="265" cy="360" r="3"/>
+    <circle cx="285" cy="320" r="3"/>
+    <circle cx="305" cy="335" r="3"/>
+    <circle cx="320" cy="305" r="3"/>
+    <circle cx="345" cy="290" r="3"/>
+    <circle cx="365" cy="310" r="3"/>
+    <circle cx="385" cy="265" r="3"/>
+    <circle cx="405" cy="280" r="3"/>
+    <circle cx="425" cy="250" r="3"/>
+    <circle cx="445" cy="265" r="3"/>
+    <circle cx="465" cy="225" r="3"/>
+    <circle cx="485" cy="240" r="3"/>
+    <circle cx="510" cy="210" r="3"/>
+    <circle cx="530" cy="225" r="3"/>
+    <circle cx="555" cy="190" r="3"/>
+    <circle cx="575" cy="205" r="3"/>
+    <circle cx="595" cy="170" r="3"/>
+    <circle cx="615" cy="185" r="3"/>
+    <circle cx="640" cy="155" r="3"/>
+    <circle cx="660" cy="170" r="3"/>
+    <circle cx="685" cy="140" r="3"/>
+  </g>
+  <!-- outlier -->
+  <circle cx="395" cy="170" r="6" fill="none" stroke="#d2778e" stroke-width="1.4"/>
+  <circle cx="395" cy="170" r="2.5" fill="#d2778e"/>
+</svg>

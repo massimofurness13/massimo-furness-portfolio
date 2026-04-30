@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <!-- faint grid -->
+  <g stroke="#14110d" stroke-width="0.5" opacity="0.1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+  <!-- triangle -->
+  <polygon points="180,140 252,260 108,260" fill="none" stroke="#14110d" stroke-width="1.4"/>
+  <!-- circle with center accent -->
+  <circle cx="400" cy="200" r="62" fill="none" stroke="#14110d" stroke-width="1.4"/>
+  <line x1="338" y1="200" x2="462" y2="200" stroke="#14110d" stroke-width="0.6" opacity="0.4" stroke-dasharray="3 3"/>
+  <circle cx="400" cy="200" r="3.5" fill="#d2778e"/>
+  <!-- square with diagonal -->
+  <rect x="560" y="140" width="120" height="120" fill="none" stroke="#14110d" stroke-width="1.4"/>
+  <line x1="560" y1="140" x2="680" y2="260" stroke="#14110d" stroke-width="1"/>
+  <!-- big italic 5 -->
+  <text x="380" y="420" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="120" font-weight="400" fill="#14110d" opacity="0.92">5</text>
+  <!-- compass arc -->
+  <path d="M 540 380 A 60 60 0 0 1 660 380" fill="none" stroke="#14110d" stroke-width="1.4"/>
+  <line x1="540" y1="380" x2="660" y2="380" stroke="#14110d" stroke-width="0.6" opacity="0.5" stroke-dasharray="3 3"/>
+  <!-- pentagon small -->
+  <polygon points="180,420 220,392 205,348 155,348 140,392" fill="none" stroke="#14110d" stroke-width="1.2"/>
+</svg>

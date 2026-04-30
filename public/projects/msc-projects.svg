@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <!-- shelf -->
+  <line x1="80" y1="400" x2="720" y2="400" stroke="#14110d" stroke-width="1.6"/>
+  <line x1="80" y1="404" x2="720" y2="404" stroke="#14110d" stroke-width="0.5" opacity="0.4"/>
+  <!-- books -->
+  <g stroke="#14110d" stroke-width="1.2">
+    <rect x="150" y="220" width="40" height="180" fill="none"/>
+    <rect x="195" y="200" width="36" height="200" fill="none"/>
+    <rect x="236" y="240" width="48" height="160" fill="none"/>
+    <rect x="289" y="210" width="40" height="190" fill="#d2778e" fill-opacity="0.16"/>
+    <rect x="334" y="230" width="38" height="170" fill="none"/>
+    <rect x="377" y="190" width="44" height="210" fill="none"/>
+    <rect x="426" y="220" width="40" height="180" fill="none"/>
+    <rect x="471" y="240" width="36" height="160" fill="none"/>
+    <rect x="512" y="200" width="46" height="200" fill="none"/>
+    <rect x="563" y="215" width="40" height="185" fill="none"/>
+    <rect x="608" y="235" width="38" height="165" fill="none"/>
+    <rect x="651" y="225" width="42" height="175" fill="none"/>
+  </g>
+  <!-- title bands -->
+  <g stroke="#14110d" stroke-width="0.6" opacity="0.45">
+    <line x1="155" y1="320" x2="185" y2="320"/>
+    <line x1="200" y1="305" x2="226" y2="305"/>
+    <line x1="241" y1="335" x2="279" y2="335"/>
+    <line x1="294" y1="310" x2="324" y2="310"/>
+    <line x1="338" y1="320" x2="368" y2="320"/>
+    <line x1="382" y1="295" x2="416" y2="295"/>
+    <line x1="431" y1="320" x2="461" y2="320"/>
+    <line x1="476" y1="335" x2="502" y2="335"/>
+    <line x1="517" y1="305" x2="553" y2="305"/>
+    <line x1="568" y1="315" x2="598" y2="315"/>
+    <line x1="613" y1="330" x2="641" y2="330"/>
+    <line x1="656" y1="320" x2="688" y2="320"/>
+  </g>
+  <!-- second band on the accent book -->
+  <line x1="294" y1="350" x2="324" y2="350" stroke="#14110d" stroke-width="0.6" opacity="0.45"/>
+</svg>
