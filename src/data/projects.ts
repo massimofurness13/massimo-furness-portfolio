@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     url: "https://trading-dashboard-j2wt.onrender.com",
     status: "Live",
     year: "2026",
-    image: "/projects/trading-dashboard.svg",
+    image: "/projects/trading-dashboard.png",
   },
   {
     id: "medellin-land",
