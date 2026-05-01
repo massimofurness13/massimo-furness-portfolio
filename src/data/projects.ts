@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
     url: "https://flashmind-35q4.onrender.com",
     status: "Live",
     year: "2026",
-    image: "/projects/flashmind.svg",
+    image: "/projects/flashmind.png",
   },
   {
     id: "padel-jersey",

@@ -1,14 +1,19 @@
 services:
   - type: web
+    runtime: static
     name: massimo-furness-portfolio
-    runtime: node
-    plan: free
-    region: oregon
     branch: main
     buildCommand: npm ci && npm run build
-    startCommand: npm run start
-    envVars:
-      - key: NODE_VERSION
-        value: 22
+    staticPublishPath: ./out
     autoDeploy: true
-    healthCheckPath: /
+    headers:
+      - path: /_next/static/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /projects/*
+        name: Cache-Control
+        value: public, max-age=86400
+    routes:
+      - type: rewrite
+        source: /:path*
+        destination: /:path*.html
