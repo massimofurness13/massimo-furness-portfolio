@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
     index: "02",
     title: "Padel Jersey",
     blurb:
-      "Multi-tenant padel court booking platform launching with Island Padel.",
+      "Padel court booking and player ranking system.",
     tags: ["SaaS", "Sports"],
     url: "#",
     status: "In progress",
