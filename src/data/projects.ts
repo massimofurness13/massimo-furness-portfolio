@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
     url: "https://massimofurness13.github.io/PTM_maths_dashboard/",
     status: "Live",
     year: "2026",
-    image: "/projects/ptm-maths.svg",
+    image: "/projects/ptm-maths.png",
   },
   {
     id: "grade5-maths",
