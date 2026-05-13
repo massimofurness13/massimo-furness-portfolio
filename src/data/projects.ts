@@ -40,8 +40,20 @@ export const PROJECTS: Project[] = [
     image: "/projects/flashmind.png",
   },
   {
-    id: "padel-jersey",
+    id: "markmate",
     index: "02",
+    title: "MarkMate",
+    blurb:
+      "AI marking assistant for UK primary teachers. Upload student work, get instant marks, misconceptions, and class-level analytics.",
+    tags: ["Education", "AI"],
+    url: "https://markmate-wmo0.onrender.com",
+    status: "Live",
+    year: "2026",
+    image: "/projects/markmate.svg",
+  },
+  {
+    id: "padel-jersey",
+    index: "03",
     title: "Padel Jersey",
     blurb:
       "Padel court booking and player ranking system.",
@@ -53,7 +65,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "trading-dashboard",
-    index: "03",
+    index: "04",
     title: "Trading Dashboard",
     blurb:
       "End-to-end trading system with custom front-end and back-end.",
@@ -65,7 +77,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "medellin-land",
-    index: "04",
+    index: "05",
     title: "Medellín Land Scorer",
     blurb:
       "Geospatial land-value scoring engine for Medellín.",
@@ -77,7 +89,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "ptm-maths",
-    index: "05",
+    index: "06",
     title: "PTM Maths Dashboard",
     blurb:
       "Interactive maths progress dashboard for PTM students.",
@@ -89,7 +101,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "grade5-maths",
-    index: "06",
+    index: "07",
     title: "Grade 5 Maths Dashboard",
     blurb:
       "Grade 5 maths curriculum tracker and practice hub.",
@@ -101,7 +113,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "q-tracker",
-    index: "07",
+    index: "08",
     title: "Q-Tracker",
     blurb: "Personal quantitative tracking tool.",
     tags: ["Data"],
@@ -112,7 +124,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "msc-projects",
-    index: "08",
+    index: "09",
     title: "MSc Projects",
     blurb: "Selected projects from MSc coursework.",
     tags: ["Academic"],

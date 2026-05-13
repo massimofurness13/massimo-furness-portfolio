@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="mm-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#14110d" stroke-width="0.4" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="#f5f2ec"/>
+  <rect width="800" height="500" fill="url(#mm-grid)"/>
+
+  <!-- Stack of student worksheets, slightly fanned -->
+  <g transform="rotate(-6 380 250)">
+    <rect x="220" y="120" width="320" height="260" rx="4" fill="#ede8dd" stroke="#14110d" stroke-width="1"/>
+  </g>
+  <g transform="rotate(4 400 250)">
+    <rect x="232" y="130" width="320" height="260" rx="4" fill="#f5f2ec" stroke="#14110d" stroke-width="1"/>
+  </g>
+
+  <!-- Top worksheet -->
+  <g>
+    <rect x="240" y="120" width="320" height="260" rx="4" fill="#f5f2ec" stroke="#14110d" stroke-width="1.4"/>
+    <!-- Header rule -->
+    <line x1="262" y1="155" x2="420" y2="155" stroke="#14110d" stroke-width="1.6"/>
+    <text x="262" y="148" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#14110d" opacity="0.6">Name:</text>
+
+    <!-- Q1 -->
+    <text x="262" y="190" font-family="Georgia, serif" font-size="14" fill="#14110d">1.  4 + 5 =</text>
+    <text x="345" y="192" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#14110d">9</text>
+    <!-- tick -->
+    <path d="M 372 184 L 380 193 L 400 173" fill="none" stroke="#d2778e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Q2 -->
+    <text x="262" y="222" font-family="Georgia, serif" font-size="14" fill="#14110d">2.  7 × 6 =</text>
+    <text x="345" y="224" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#14110d">42</text>
+    <path d="M 388 216 L 396 225 L 416 205" fill="none" stroke="#d2778e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Q3 (wrong) -->
+    <text x="262" y="254" font-family="Georgia, serif" font-size="14" fill="#14110d">3.  9 ÷ 3 =</text>
+    <text x="345" y="256" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#14110d">2</text>
+    <!-- cross -->
+    <path d="M 372 246 L 392 266 M 392 246 L 372 266" stroke="#d2778e" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Q4 -->
+    <text x="262" y="286" font-family="Georgia, serif" font-size="14" fill="#14110d">4.  12 − 8 =</text>
+    <text x="358" y="288" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#14110d">4</text>
+    <path d="M 388 278 L 396 287 L 416 267" fill="none" stroke="#d2778e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Q5 placeholder lines -->
+    <text x="262" y="318" font-family="Georgia, serif" font-size="14" fill="#14110d" opacity="0.55">5.  ¾ × ⅔ =</text>
+    <line x1="345" y1="320" x2="395" y2="320" stroke="#14110d" stroke-width="0.7" opacity="0.45"/>
+
+    <!-- score badge -->
+    <g transform="translate(485 348)">
+      <rect x="-32" y="-20" width="64" height="32" rx="2" fill="none" stroke="#14110d" stroke-width="1"/>
+      <text x="0" y="2" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#14110d" text-anchor="middle">3 / 4</text>
+    </g>
+
+    <!-- AI spark, top-right of page -->
+    <g transform="translate(530 148)">
+      <path d="M 0 -11 L 2.5 -2.5 L 11 0 L 2.5 2.5 L 0 11 L -2.5 2.5 L -11 0 L -2.5 -2.5 Z" fill="#d2778e"/>
+      <circle cx="14" cy="-10" r="2" fill="#d2778e"/>
+      <circle cx="-13" cy="10" r="1.6" fill="#d2778e"/>
+    </g>
+  </g>
+</svg>
