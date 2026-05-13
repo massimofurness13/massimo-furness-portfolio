@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     url: "https://markmate-wmo0.onrender.com",
     status: "Live",
     year: "2026",
-    image: "/projects/markmate.svg",
+    image: "/projects/markmate.png",
   },
   {
     id: "padel-jersey",
