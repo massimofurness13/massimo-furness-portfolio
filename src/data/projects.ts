@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
   {
     id: "flashmind",
     index: "01",
-    title: "FlashMind",
+    title: "Huella",
     blurb:
       "AI-powered flashcards with spaced repetition and dual-coding visuals.",
     tags: ["Education", "AI"],
@@ -66,9 +66,9 @@ export const PROJECTS: Project[] = [
   {
     id: "trading-dashboard",
     index: "04",
-    title: "Trading Dashboard",
+    title: "Investing Dashboard",
     blurb:
-      "End-to-end trading system with custom front-end and back-end.",
+      "End-to-end investing system with custom front-end and back-end.",
     tags: ["Finance", "Data"],
     url: "https://trading-dashboard-j2wt.onrender.com",
     status: "Live",
