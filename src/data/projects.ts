@@ -52,8 +52,20 @@ export const PROJECTS: Project[] = [
     image: "/projects/markmate.png",
   },
   {
-    id: "padel-jersey",
+    id: "sigma",
     index: "03",
+    title: "Sigma AI Academy",
+    blurb:
+      "Kid-safe AI tutor and chat companion for young learners — kind, curious, and useful by design.",
+    tags: ["Education", "AI"],
+    url: "https://sigma-ai-academy.vercel.app",
+    status: "Live",
+    year: "2026",
+    image: "/projects/sigma.png",
+  },
+  {
+    id: "padel-jersey",
+    index: "04",
     title: "Padel Jersey",
     blurb:
       "Padel court booking and player ranking system.",
@@ -65,7 +77,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "trading-dashboard",
-    index: "04",
+    index: "05",
     title: "Investing Dashboard",
     blurb:
       "End-to-end investing system with custom front-end and back-end.",
@@ -77,7 +89,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "medellin-land",
-    index: "05",
+    index: "06",
     title: "Medellín Land Scorer",
     blurb:
       "Geospatial land-value scoring engine for Medellín.",
@@ -89,7 +101,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "ptm-maths",
-    index: "06",
+    index: "07",
     title: "PTM Maths Dashboard",
     blurb:
       "Interactive maths progress dashboard for PTM students.",
@@ -101,7 +113,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "grade5-maths",
-    index: "07",
+    index: "08",
     title: "Grade 5 Maths Dashboard",
     blurb:
       "Grade 5 maths curriculum tracker and practice hub.",
@@ -113,7 +125,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "q-tracker",
-    index: "08",
+    index: "09",
     title: "Q-Tracker",
     blurb: "Personal quantitative tracking tool.",
     tags: ["Data"],
@@ -124,7 +136,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "msc-projects",
-    index: "09",
+    index: "10",
     title: "MSc Projects",
     blurb: "Selected projects from MSc coursework.",
     tags: ["Academic"],
