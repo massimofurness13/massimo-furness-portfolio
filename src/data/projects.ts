@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     index: "03",
     title: "Sigma AI Academy",
     blurb:
-      "Kid-safe AI tutor and chat companion for young learners — kind, curious, and useful by design.",
+      "AI platform for children — chat, image generation, and browser-based app building.",
     tags: ["Education", "AI"],
     url: "https://sigma-ai-academy.vercel.app",
     status: "Live",
