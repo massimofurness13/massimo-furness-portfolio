@@ -240,51 +240,21 @@ function WhatsAppCTA({
   );
 }
 
-/* ---------------- Placeholder testimonial card -------------------- */
-// Replace each card's contents with <Image src={`/tutor/testimonials/${n}.png`}/>
-// once you have real screenshots.
-
-function PlaceholderTestimonial({
-  n,
-  label,
-}: {
-  n: number;
-  label: string;
-}) {
-  const lines = [
-    "Massimo is the best teacher I have ever had!",
-    "My maths grade went up two whole levels.",
-    "I look forward to every lesson.",
-    "He explains things so I actually get it.",
-  ];
-  const line = lines[(n - 1) % lines.length];
-  return (
-    <div className="aspect-[9/16] w-full bg-[#0b141a] text-white rounded-[2.5rem] overflow-hidden flex flex-col">
-      {/* WhatsApp header */}
-      <div className="bg-[#1f2c34] px-5 py-4 flex items-center gap-3 shrink-0">
-        <div className="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center text-[#0b141a] font-semibold text-sm">
-          MF
-        </div>
-        <div className="flex flex-col gap-0.5">
-          <span className="text-[13px] font-medium text-white">Pupil · {label} {n.toString().padStart(2, "0")}</span>
-          <span className="text-[10px] text-white/60">online</span>
-        </div>
-      </div>
-      {/* Chat body */}
-      <div className="flex-1 px-4 py-6 flex flex-col gap-3 justify-end bg-[#0b141a]">
-        <div className="max-w-[80%] self-end bg-[#005c4b] text-white text-[14px] leading-snug px-3 py-2 rounded-2xl rounded-tr-md">
-          {line}
-        </div>
-        <div className="max-w-[55%] self-end bg-[#005c4b] text-white text-[14px] leading-snug px-3 py-2 rounded-2xl rounded-tr-md">
-          😊
-        </div>
-        <div className="text-[10px] text-white/40 self-end pr-1">today</div>
-      </div>
-    </div>
-  );
-}
-
 /* ---------------- Page ---------------- */
+
+// Real pupil testimonial screenshots — drop more at
+// /public/tutor/testimonials/NN.png and add (with intrinsic dimensions
+// so the layout doesn't shrink them to unreadable text).
+const TESTIMONIALS = [
+  { src: "/tutor/testimonials/01.png", w: 731, h: 31 },
+  { src: "/tutor/testimonials/02.png", w: 231, h: 71 },
+  { src: "/tutor/testimonials/03.png", w: 955, h: 28 },
+  { src: "/tutor/testimonials/04.png", w: 230, h: 123 },
+  { src: "/tutor/testimonials/05.png", w: 1297, h: 50 },
+  { src: "/tutor/testimonials/06.png", w: 220, h: 71 },
+  { src: "/tutor/testimonials/07.png", w: 225, h: 57 },
+  { src: "/tutor/testimonials/08.png", w: 222, h: 129 },
+];
 
 export function TutorPage() {
   const [lang, setLang] = useState<Lang>("en");
@@ -447,26 +417,47 @@ export function TutorPage() {
           </h2>
         </div>
 
-        {/* The stack */}
-        <div className="relative mx-auto max-w-md">
-          {[1, 2, 3, 4].map((n, i) => (
+        {/* The stack — pupil quote screenshots styled as paper notes */}
+        <div className="relative mx-auto max-w-3xl">
+          {TESTIMONIALS.map((tst, i) => (
             <div
-              key={n}
-              className="sticky mb-[55vh] w-full"
+              key={tst.src}
+              className="sticky mb-[42vh] w-full flex justify-center px-4"
               style={{
-                top: `calc(14vh + ${i * 18}px)`,
+                top: `calc(18vh + ${i * 10}px)`,
                 zIndex: 10 + i,
                 transform: `rotate(${cardRotations[i % cardRotations.length]})`,
                 transformOrigin: "center top",
               }}
             >
-              <div className="shadow-[0_22px_40px_-22px_rgba(20,17,13,0.45),0_8px_18px_-12px_rgba(20,17,13,0.25)] rounded-[2.5rem]">
-                <PlaceholderTestimonial n={n} label={t.testimonialsPlaceholder} />
-              </div>
+              <figure
+                className="bg-[#fffdf8] border border-rule p-6 sm:p-8 shadow-[0_24px_42px_-22px_rgba(20,17,13,0.42),0_8px_18px_-12px_rgba(20,17,13,0.22)] max-w-full"
+                style={{ width: "fit-content" }}
+                aria-label={`${t.testimonialsPlaceholder} ${i + 1}`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={tst.src}
+                  alt={t.testimonialsPlaceholder}
+                  width={tst.w}
+                  height={tst.h}
+                  loading="lazy"
+                  className="block h-auto"
+                  style={{
+                    // Source resolutions vary wildly. Display at natural width
+                    // up to a sensible cap, never wider than the container.
+                    width: `min(${tst.w}px, 100%)`,
+                    maxWidth: "min(720px, 100%)",
+                  }}
+                />
+                <figcaption className="mt-4 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-faint">
+                  Pupil · 2025–26
+                </figcaption>
+              </figure>
             </div>
           ))}
           {/* Bottom buffer so the last card has space to settle */}
-          <div className="h-[20vh]" />
+          <div className="h-[25vh]" />
         </div>
       </section>
 
