@@ -7,62 +7,122 @@ type Lang = "en" | "es";
 
 const WHATSAPP_NUMBER = "447361281737";
 
-const COPY = {
+type Offer = { title: string; detail: string };
+
+type Copy = {
+  eyebrow: string;
+  name: string;
+  tagline: string;
+  intro: string;
+  credentials: string[];
+  ctaPrimary: string;
+  ctaSub: string;
+  offerHeading: string;
+  offers: Offer[];
+  videoHeading: string;
+  videoComing: string;
+  footer: string;
+  waMessage: string;
+};
+
+const COPY: Record<Lang, Copy> = {
   en: {
-    eyebrow: "PRIVATE TUITION · JERSEY & ONLINE",
+    eyebrow: "PRIVATE ONLINE TUITION",
     name: "Massimo Furness",
     tagline: "Maths & English tutor",
-    intro: [
-      "I'm Massimo — a British primary school teacher with six years of classroom experience across London and international schools. I tutor children one-to-one in maths and English, both in person and online.",
-      "Maths is my specialism. I work fluently within the White Rose Maths scheme — the same scheme used by many UK and international primary schools — so the work fits seamlessly with what your child is doing in class.",
-      "I'm also a native English speaker. Whether your child needs to catch up, get ahead, or build confidence speaking and writing proper English, I can help.",
+    intro:
+      "Hi — I'm Massimo. I've taught primary children for six years, in London and in international schools. I now tutor online, one-to-one.",
+    credentials: [
+      "English instruction by a native speaker",
+      "White Rose Maths expert",
+      "6 years primary teaching · London & international",
+      "Online · Year 1–6",
     ],
-    teach: {
-      heading: "What I teach",
-      items: [
-        { title: "Maths", detail: "Year 1–6 · White Rose scheme · arithmetic, reasoning, problem-solving" },
-        { title: "English", detail: "Reading, writing, grammar, comprehension, spoken confidence" },
-        { title: "Native English speaker", detail: "UK-trained · proper accent, idiom and usage" },
-        { title: "In-person or online", detail: "One-to-one sessions tailored to your child" },
-      ],
-    },
+    ctaPrimary: "Message me on WhatsApp",
+    ctaSub: "Tell me about your child.",
+    offerHeading: "What I offer",
+    offers: [
+      {
+        title: "Individualised lesson plans",
+        detail:
+          "Engineered specifically around your child's gaps and where they're trying to get to.",
+      },
+      {
+        title: "Matched to their school",
+        detail:
+          "Same methods, same curriculum, same content. When a test is coming, we've already revised what matters.",
+      },
+      {
+        title: "Weekly homework",
+        detail:
+          "Set after every lesson to keep the momentum going between sessions.",
+      },
+      {
+        title: "Engagement tracking",
+        detail:
+          "I watch what lands, what doesn't, and what we need to come back to next week.",
+      },
+      {
+        title: "An email to you after every lesson",
+        detail:
+          "A short note from me: what we covered, how it went, and what comes next.",
+      },
+    ],
     videoHeading: "What my pupils say",
     videoComing: "Video coming soon",
-    ctaPrimary: "Message me on WhatsApp",
-    ctaSub: "I'll reply personally within a day. Tell me your child's year group and what you'd like to work on.",
-    waMessage: "Hi Massimo, I saw your tutor page and would like to ask about tuition for my child.",
     footer: "© Massimo Furness · Private tuition enquiries",
-    langSwitch: "EN",
-    otherLangFull: "Español",
+    waMessage:
+      "Hi Massimo, I saw your tutor page and would like to ask about tuition for my child.",
   },
   es: {
-    eyebrow: "CLASES PARTICULARES · JERSEY Y ONLINE",
+    eyebrow: "CLASES PARTICULARES ONLINE",
     name: "Massimo Furness",
     tagline: "Profesor de matemáticas e inglés",
-    intro: [
-      "Soy Massimo — profesor británico de primaria con seis años de experiencia en colegios de Londres y colegios internacionales. Doy clases particulares de matemáticas e inglés, en persona y en línea, adaptadas al nivel de cada niño.",
-      "Las matemáticas son mi especialidad. Trabajo con fluidez el método White Rose Maths — el mismo que utilizan muchos colegios británicos e internacionales — para que las clases encajen perfectamente con lo que su hijo o hija está aprendiendo en el colegio.",
-      "Como hablante nativo de inglés, también ayudo a los niños a hablar y escribir un inglés correcto y natural — desde ponerse al día hasta tomar la delantera y ganar confianza.",
+    intro:
+      "Hola — soy Massimo. He enseñado primaria durante seis años, en colegios de Londres e internacionales. Ahora doy clases particulares online, uno a uno.",
+    credentials: [
+      "Inglés enseñado por un nativo",
+      "Experto en White Rose Maths",
+      "6 años enseñando primaria · Londres y colegios internacionales",
+      "Online · Year 1–6",
     ],
-    teach: {
-      heading: "Qué enseño",
-      items: [
-        { title: "Matemáticas", detail: "Year 1–6 · método White Rose · cálculo, razonamiento, resolución de problemas" },
-        { title: "Inglés", detail: "Lectura, escritura, gramática, comprensión y expresión oral" },
-        { title: "Hablante nativo", detail: "Formación británica · acento, expresiones y uso reales" },
-        { title: "Presencial u online", detail: "Clases individuales adaptadas a tu hijo o hija" },
-      ],
-    },
+    ctaPrimary: "Escríbeme por WhatsApp",
+    ctaSub: "Cuéntame sobre tu hijo o hija.",
+    offerHeading: "Lo que ofrezco",
+    offers: [
+      {
+        title: "Planes de clase individualizados",
+        detail:
+          "Diseñados específicamente sobre las lagunas de tu hijo o hija y a dónde quiere llegar.",
+      },
+      {
+        title: "En sintonía con su colegio",
+        detail:
+          "Mismos métodos, mismo currículo, mismos contenidos. Cuando se acerca un examen, ya hemos repasado lo que importa.",
+      },
+      {
+        title: "Deberes semanales",
+        detail:
+          "Después de cada clase, para mantener el ritmo entre sesiones.",
+      },
+      {
+        title: "Seguimiento de su atención",
+        detail:
+          "Observo qué entienden, qué se les escapa y qué hay que repasar la semana siguiente.",
+      },
+      {
+        title: "Un email para ti después de cada clase",
+        detail:
+          "Una nota breve: qué hemos hecho, cómo ha ido y qué viene después.",
+      },
+    ],
     videoHeading: "Lo que dicen mis alumnos",
     videoComing: "Vídeo próximamente",
-    ctaPrimary: "Escríbeme por WhatsApp",
-    ctaSub: "Te respondo personalmente en menos de 24 horas. Cuéntame en qué curso está tu hijo o hija y qué te gustaría trabajar.",
-    waMessage: "Hola Massimo, vi tu página de tutorías y me gustaría preguntar sobre clases para mi hijo o hija.",
     footer: "© Massimo Furness · Consultas de clases particulares",
-    langSwitch: "ES",
-    otherLangFull: "English",
+    waMessage:
+      "Hola Massimo, vi tu página de tutorías y me gustaría preguntar sobre clases para mi hijo o hija.",
   },
-} as const;
+};
 
 function waLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -78,7 +138,6 @@ export function TutorPage() {
     }
   }, []);
 
-  // Keep <html lang> in sync so screen readers + browser tools pronounce correctly.
   useEffect(() => {
     document.documentElement.setAttribute("lang", lang);
     return () => {
@@ -101,7 +160,9 @@ export function TutorPage() {
             <span
               aria-hidden
               className="absolute top-0 bottom-0 w-[50%] bg-accent/20 border border-accent/40 transition-transform duration-300 ease-out"
-              style={{ transform: lang === "en" ? "translateX(0%)" : "translateX(100%)" }}
+              style={{
+                transform: lang === "en" ? "translateX(0%)" : "translateX(100%)",
+              }}
             />
             <button
               type="button"
@@ -127,7 +188,7 @@ export function TutorPage() {
         </div>
 
         {/* Hero */}
-        <header className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start sm:items-center mb-12 lg:mb-16">
+        <header className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start sm:items-center mb-10 lg:mb-12">
           <div className="shrink-0 overflow-hidden rounded-full border border-rule w-32 h-32 sm:w-44 sm:h-44 bg-paper-deep">
             <Image
               src="/tutor/photo.svg"
@@ -142,70 +203,87 @@ export function TutorPage() {
             <span className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-muted">
               {t.eyebrow}
             </span>
-            <h1 className="font-serif text-[clamp(2.75rem,6vw,4.5rem)] leading-[1.02] text-ink">
+            <h1 className="font-serif text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.02] text-ink">
               <span className="italic">{t.name.split(" ")[0]}</span>{" "}
               <span>{t.name.split(" ").slice(1).join(" ")}.</span>
             </h1>
-            <p className="font-serif italic text-2xl sm:text-3xl text-ink/85">
+            <p className="font-serif italic text-2xl sm:text-[1.75rem] text-ink/85 leading-tight">
               {t.tagline}
             </p>
           </div>
         </header>
 
-        {/* Primary CTA — high on the page so parents who skim still see it */}
+        {/* Personal intro — one short paragraph, warmer */}
+        <p className="text-ink text-[17px] sm:text-[18px] leading-[1.55] max-w-[60ch] mb-10 lg:mb-12">
+          {t.intro}
+        </p>
+
+        {/* Credential flexes — punchy bullets */}
+        <ul className="flex flex-col gap-2.5 mb-10 lg:mb-14">
+          {t.credentials.map((c) => (
+            <li key={c} className="flex items-baseline gap-3">
+              <span
+                aria-hidden
+                className="inline-block w-1.5 h-1.5 rounded-full bg-accent shrink-0 translate-y-[-3px]"
+              />
+              <span className="text-ink text-[16px] leading-[1.5]">{c}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Primary CTA */}
         <a
           href={waLink(t.waMessage)}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-3 bg-accent text-paper px-6 py-4 font-mono text-[12px] tracking-[0.2em] uppercase hover:bg-accent-soft transition-colors duration-200 mb-4"
+          className="group inline-flex items-center gap-3 bg-accent text-paper px-6 py-4 font-mono text-[12px] tracking-[0.2em] uppercase hover:bg-accent-soft transition-colors duration-200 mb-3"
         >
           <span aria-hidden className="text-base leading-none">↗</span>
           {t.ctaPrimary}
         </a>
-        <p className="text-ink-muted text-[14px] leading-relaxed max-w-[58ch] mb-16 lg:mb-20">
+        <p className="font-serif italic text-ink/80 text-[17px] mb-16 lg:mb-20">
           {t.ctaSub}
         </p>
 
-        {/* Intro */}
-        <section className="flex flex-col gap-5 mb-16 lg:mb-20">
-          {t.intro.map((para, i) => (
-            <p
-              key={i}
-              className="text-ink text-[17px] sm:text-[18px] leading-[1.6] max-w-[64ch]"
-            >
-              {para}
-            </p>
-          ))}
-        </section>
-
-        {/* What I teach */}
+        {/* What I offer — the meaty bullet list */}
         <section className="mb-16 lg:mb-20">
-          <h2 className="font-serif text-[clamp(1.6rem,3vw,2.25rem)] mb-6 lg:mb-8 text-ink">
-            <span className="italic">{t.teach.heading.split(" ")[0]}</span>{" "}
-            {t.teach.heading.split(" ").slice(1).join(" ")}
+          <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.4rem)] mb-8 lg:mb-10 text-ink">
+            <span className="italic">{t.offerHeading.split(" ")[0]}</span>{" "}
+            {t.offerHeading.split(" ").slice(1).join(" ")}
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 border-t border-rule pt-6">
-            {t.teach.items.map((item) => (
-              <li key={item.title} className="flex flex-col gap-1.5">
-                <span className="font-serif text-[1.3rem] leading-tight text-ink">
-                  {item.title}
+          <ol className="flex flex-col">
+            {t.offers.map((item, i) => (
+              <li
+                key={item.title}
+                className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7 py-6 border-t border-rule last:border-b"
+              >
+                <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-accent pt-1.5">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="text-ink-muted text-[14.5px] leading-[1.55]">
-                  {item.detail}
-                </span>
+                <div className="flex flex-col gap-1.5">
+                  <span className="font-serif text-[1.45rem] leading-tight text-ink">
+                    {item.title}
+                  </span>
+                  <span className="text-ink-muted text-[15.5px] leading-[1.55] max-w-[58ch]">
+                    {item.detail}
+                  </span>
+                </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </section>
 
         {/* Video placeholder */}
         <section className="mb-16 lg:mb-20">
-          <h2 className="font-serif text-[clamp(1.6rem,3vw,2.25rem)] mb-6 lg:mb-8 text-ink">
+          <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.4rem)] mb-6 lg:mb-8 text-ink">
             <span className="italic">{t.videoHeading.split(" ")[0]}</span>{" "}
             {t.videoHeading.split(" ").slice(1).join(" ")}
           </h2>
           <div className="relative aspect-video border border-rule bg-paper-deep flex flex-col items-center justify-center text-center gap-2">
-            <span aria-hidden className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint">
+            <span
+              aria-hidden
+              className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint"
+            >
               ▶
             </span>
             <span className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-muted">
@@ -215,7 +293,7 @@ export function TutorPage() {
         </section>
 
         {/* Closing CTA */}
-        <section className="border-t border-rule pt-12 flex flex-col items-start gap-5">
+        <section className="border-t border-rule pt-12 flex flex-col items-start gap-3">
           <a
             href={waLink(t.waMessage)}
             target="_blank"
@@ -225,7 +303,7 @@ export function TutorPage() {
             <span aria-hidden className="text-base leading-none">↗</span>
             {t.ctaPrimary}
           </a>
-          <p className="text-ink-muted text-[14px] leading-relaxed max-w-[58ch]">
+          <p className="font-serif italic text-ink/80 text-[17px]">
             {t.ctaSub}
           </p>
         </section>
