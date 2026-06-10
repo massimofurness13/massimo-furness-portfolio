@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /tutor
+Disallow: /tutor.html
+Disallow: /tutor/
+
+Sitemap: https://massimofurness.com/sitemap.xml
