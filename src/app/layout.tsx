@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import { Geist, JetBrains_Mono, Instrument_Serif, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({
@@ -22,6 +22,17 @@ const serif = Instrument_Serif({
   display: "swap",
 });
 
+// Warm humanist serif used (only) on the tutor landing page. Variable font
+// — `axes` requires weight to be implicit (variable), so we omit the weight
+// list and let the CSS `font-variation-settings` set SOFT + opsz on the page.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+  axes: ["SOFT", "opsz"],
+});
+
 export const metadata: Metadata = {
   title: "Massimo Furness — Selected Work",
   description:
@@ -42,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${mono.variable} ${serif.variable}`}
+      className={`${geist.variable} ${mono.variable} ${serif.variable} ${fraunces.variable}`}
     >
       <body className="min-h-screen">{children}</body>
     </html>

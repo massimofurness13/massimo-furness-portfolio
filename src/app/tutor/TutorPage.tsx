@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type SVGProps } from "react";
 
 type Lang = "en" | "es";
 
@@ -16,11 +16,10 @@ type Copy = {
   intro: string;
   credentials: string[];
   ctaPrimary: string;
-  ctaSub: string;
   offerHeading: string;
   offers: Offer[];
-  videoHeading: string;
-  videoComing: string;
+  testimonialsHeading: string;
+  testimonialsPlaceholder: string;
   footer: string;
   waMessage: string;
 };
@@ -39,7 +38,6 @@ const COPY: Record<Lang, Copy> = {
       "Online · Year 1–6",
     ],
     ctaPrimary: "Message me on WhatsApp",
-    ctaSub: "Tell me about your child.",
     offerHeading: "What I offer",
     offers: [
       {
@@ -68,8 +66,8 @@ const COPY: Record<Lang, Copy> = {
           "A short note from me: what we covered, how it went, and what comes next.",
       },
     ],
-    videoHeading: "What my pupils say",
-    videoComing: "Video coming soon",
+    testimonialsHeading: "What my pupils say",
+    testimonialsPlaceholder: "Testimonial",
     footer: "© Massimo Furness · Private tuition enquiries",
     waMessage:
       "Hi Massimo, I saw your tutor page and would like to ask about tuition for my child.",
@@ -87,7 +85,6 @@ const COPY: Record<Lang, Copy> = {
       "Online · Year 1–6",
     ],
     ctaPrimary: "Escríbeme por WhatsApp",
-    ctaSub: "Cuéntame sobre tu hijo o hija.",
     offerHeading: "Lo que ofrezco",
     offers: [
       {
@@ -116,8 +113,8 @@ const COPY: Record<Lang, Copy> = {
           "Una nota breve: qué hemos hecho, cómo ha ido y qué viene después.",
       },
     ],
-    videoHeading: "Lo que dicen mis alumnos",
-    videoComing: "Vídeo próximamente",
+    testimonialsHeading: "Lo que dicen mis alumnos",
+    testimonialsPlaceholder: "Testimonio",
     footer: "© Massimo Furness · Consultas de clases particulares",
     waMessage:
       "Hola Massimo, vi tu página de tutorías y me gustaría preguntar sobre clases para mi hijo o hija.",
@@ -127,6 +124,167 @@ const COPY: Record<Lang, Copy> = {
 function waLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
+/* ---------------- icons (custom inline line drawings) ----------------- */
+
+const iconBase: SVGProps<SVGSVGElement> = {
+  viewBox: "0 0 40 40",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.4,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+function IconClipboard() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <rect x="9" y="7" width="22" height="27" rx="1.5" />
+      <rect x="15" y="4" width="10" height="5" rx="1" />
+      <line x1="13" y1="15" x2="27" y2="15" />
+      <line x1="13" y1="20" x2="27" y2="20" />
+      <line x1="13" y1="25" x2="23" y2="25" />
+      <circle cx="13" cy="29" r="1.5" fill="var(--color-accent)" stroke="none" />
+      <line x1="17" y1="29" x2="27" y2="29" />
+    </svg>
+  );
+}
+
+function IconSchool() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <path d="M20 6 L34 14 L34 34 L6 34 L6 14 Z" />
+      <line x1="6" y1="14" x2="34" y2="14" />
+      <rect x="16" y="22" width="8" height="12" />
+      <line x1="20" y1="22" x2="20" y2="34" />
+      <path d="M20 6 L20 11" stroke="var(--color-accent)" />
+      <path d="M17 9 L23 9" stroke="var(--color-accent)" />
+    </svg>
+  );
+}
+
+function IconHomework() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <rect x="8" y="6" width="20" height="26" rx="1.5" />
+      <line x1="12" y1="13" x2="24" y2="13" />
+      <line x1="12" y1="18" x2="24" y2="18" />
+      <line x1="12" y1="23" x2="20" y2="23" />
+      <path
+        d="M22 25 L30 17 L33 20 L25 28 L22 31 L22 25 Z"
+        fill="var(--color-paper)"
+      />
+      <path d="M28 19 L31 22" stroke="var(--color-accent)" />
+    </svg>
+  );
+}
+
+function IconChart() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <line x1="7" y1="33" x2="33" y2="33" />
+      <line x1="7" y1="33" x2="7" y2="9" />
+      <rect x="12" y="24" width="4" height="9" />
+      <rect x="19" y="18" width="4" height="15" />
+      <rect x="26" y="12" width="4" height="21" fill="var(--color-accent)" fillOpacity="0.18" />
+      <circle cx="28" cy="9" r="2" fill="var(--color-accent)" stroke="none" />
+    </svg>
+  );
+}
+
+function IconEnvelope() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <rect x="6" y="11" width="28" height="20" rx="1.5" />
+      <path d="M6 13 L20 24 L34 13" />
+      <circle cx="33" cy="11" r="2.5" fill="var(--color-accent)" stroke="none" />
+    </svg>
+  );
+}
+
+const OFFER_ICONS = [
+  IconClipboard,
+  IconSchool,
+  IconHomework,
+  IconChart,
+  IconEnvelope,
+];
+
+/* ---------------- WhatsApp CTA ---------------- */
+
+function WhatsAppCTA({
+  href,
+  label,
+}: {
+  href: string;
+  label: string;
+}) {
+  return (
+    <div className="flex justify-center">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-flex items-center gap-3 bg-[#25D366] text-white px-7 py-4 rounded-full shadow-[0_8px_24px_-10px_rgba(37,211,102,0.55)] hover:bg-[#1ebe5d] transition-colors duration-200 font-medium text-[16px] tracking-[0.01em]"
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 32 32"
+          className="w-5 h-5 fill-white"
+        >
+          <path d="M16 .5C7.453.5.5 7.453.5 16c0 2.825.74 5.59 2.146 8.028L0 32l8.197-2.625A15.43 15.43 0 0 0 16 31.5c8.547 0 15.5-6.953 15.5-15.5S24.547.5 16 .5Zm0 28.25a13.18 13.18 0 0 1-6.717-1.842l-.482-.286-4.866 1.558 1.581-4.74-.314-.5A13.21 13.21 0 0 1 2.75 16C2.75 8.693 8.693 2.75 16 2.75c7.307 0 13.25 5.943 13.25 13.25S23.307 28.75 16 28.75Zm7.272-9.92c-.398-.2-2.358-1.165-2.722-1.297-.365-.133-.63-.2-.895.2-.265.398-1.025 1.297-1.258 1.563-.232.265-.464.298-.862.099-.398-.199-1.682-.62-3.205-1.977-1.184-1.056-1.983-2.359-2.215-2.758-.232-.398-.025-.614.174-.812.18-.18.398-.464.597-.696.2-.232.265-.398.398-.663.132-.265.066-.498-.033-.696-.099-.199-.895-2.157-1.226-2.952-.323-.775-.65-.67-.895-.683-.232-.012-.498-.014-.762-.014-.265 0-.696.099-1.06.498-.365.398-1.392 1.36-1.392 3.318 0 1.957 1.425 3.847 1.624 4.112.199.265 2.804 4.282 6.794 6.005.95.41 1.69.655 2.267.84.953.302 1.82.26 2.504.158.764-.114 2.358-.964 2.69-1.895.332-.93.332-1.728.232-1.895-.099-.166-.365-.265-.762-.464Z" />
+        </svg>
+        {label}
+      </a>
+    </div>
+  );
+}
+
+/* ---------------- Placeholder testimonial card -------------------- */
+// Replace each card's contents with <Image src={`/tutor/testimonials/${n}.png`}/>
+// once you have real screenshots.
+
+function PlaceholderTestimonial({
+  n,
+  label,
+}: {
+  n: number;
+  label: string;
+}) {
+  const lines = [
+    "Massimo is the best teacher I have ever had!",
+    "My maths grade went up two whole levels.",
+    "I look forward to every lesson.",
+    "He explains things so I actually get it.",
+  ];
+  const line = lines[(n - 1) % lines.length];
+  return (
+    <div className="aspect-[9/16] w-full bg-[#0b141a] text-white rounded-[2.5rem] overflow-hidden flex flex-col">
+      {/* WhatsApp header */}
+      <div className="bg-[#1f2c34] px-5 py-4 flex items-center gap-3 shrink-0">
+        <div className="w-9 h-9 rounded-full bg-[#25D366] flex items-center justify-center text-[#0b141a] font-semibold text-sm">
+          MF
+        </div>
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[13px] font-medium text-white">Pupil · {label} {n.toString().padStart(2, "0")}</span>
+          <span className="text-[10px] text-white/60">online</span>
+        </div>
+      </div>
+      {/* Chat body */}
+      <div className="flex-1 px-4 py-6 flex flex-col gap-3 justify-end bg-[#0b141a]">
+        <div className="max-w-[80%] self-end bg-[#005c4b] text-white text-[14px] leading-snug px-3 py-2 rounded-2xl rounded-tr-md">
+          {line}
+        </div>
+        <div className="max-w-[55%] self-end bg-[#005c4b] text-white text-[14px] leading-snug px-3 py-2 rounded-2xl rounded-tr-md">
+          😊
+        </div>
+        <div className="text-[10px] text-white/40 self-end pr-1">today</div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------------- Page ---------------- */
 
 export function TutorPage() {
   const [lang, setLang] = useState<Lang>("en");
@@ -147,8 +305,20 @@ export function TutorPage() {
 
   const t = COPY[lang];
 
+  // Subtle hand-stacked rotations for testimonial cards.
+  const cardRotations = ["-2.5deg", "1.8deg", "-1.4deg", "2.4deg", "-2deg"];
+
   return (
-    <main className="px-6 sm:px-10 lg:px-16 py-12 lg:py-20">
+    <main
+      // Switch the whole tutor page to a warmer humanist serif + lightly softened axis.
+      className="px-6 sm:px-10 lg:px-16 py-12 lg:py-20"
+      style={{
+        // Override the default body font on this page only.
+        ["--font-sans" as never]: "var(--font-fraunces)",
+        fontVariationSettings: '"SOFT" 100, "opsz" 14',
+        fontFamily: "var(--font-fraunces), Georgia, serif",
+      }}
+    >
       <div className="mx-auto max-w-3xl">
         {/* Language toggle */}
         <div className="flex items-center justify-end mb-10 lg:mb-12">
@@ -203,113 +373,111 @@ export function TutorPage() {
             <span className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-muted">
               {t.eyebrow}
             </span>
-            <h1 className="font-serif text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.02] text-ink">
-              <span className="italic">{t.name.split(" ")[0]}</span>{" "}
-              <span>{t.name.split(" ").slice(1).join(" ")}.</span>
+            <h1 className="text-[clamp(2.5rem,5.5vw,4rem)] leading-[1] text-ink">
+              <span className="italic font-medium">{t.name.split(" ")[0]}</span>{" "}
+              <span className="font-normal">{t.name.split(" ").slice(1).join(" ")}.</span>
             </h1>
-            <p className="font-serif italic text-2xl sm:text-[1.75rem] text-ink/85 leading-tight">
+            <p className="italic text-2xl sm:text-[1.75rem] text-ink/85 leading-tight">
               {t.tagline}
             </p>
           </div>
         </header>
 
-        {/* Personal intro — one short paragraph, warmer */}
-        <p className="text-ink text-[17px] sm:text-[18px] leading-[1.55] max-w-[60ch] mb-10 lg:mb-12">
+        {/* Personal intro */}
+        <p className="text-ink text-[18px] sm:text-[19px] leading-[1.55] max-w-[60ch] mb-10 lg:mb-12">
           {t.intro}
         </p>
 
-        {/* Credential flexes — punchy bullets */}
-        <ul className="flex flex-col gap-2.5 mb-10 lg:mb-14">
+        {/* Credential flexes */}
+        <ul className="flex flex-col gap-2.5 mb-12 lg:mb-16">
           {t.credentials.map((c) => (
             <li key={c} className="flex items-baseline gap-3">
               <span
                 aria-hidden
                 className="inline-block w-1.5 h-1.5 rounded-full bg-accent shrink-0 translate-y-[-3px]"
               />
-              <span className="text-ink text-[16px] leading-[1.5]">{c}</span>
+              <span className="text-ink text-[17px] leading-[1.5]">{c}</span>
             </li>
           ))}
         </ul>
 
-        {/* Primary CTA */}
-        <a
-          href={waLink(t.waMessage)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-3 bg-accent text-paper px-6 py-4 font-mono text-[12px] tracking-[0.2em] uppercase hover:bg-accent-soft transition-colors duration-200 mb-3"
-        >
-          <span aria-hidden className="text-base leading-none">↗</span>
-          {t.ctaPrimary}
-        </a>
-        <p className="font-serif italic text-ink/80 text-[17px] mb-16 lg:mb-20">
-          {t.ctaSub}
-        </p>
+        {/* Primary CTA — centred, green */}
+        <div className="mb-20 lg:mb-28">
+          <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
+        </div>
 
-        {/* What I offer — the meaty bullet list */}
-        <section className="mb-16 lg:mb-20">
-          <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.4rem)] mb-8 lg:mb-10 text-ink">
-            <span className="italic">{t.offerHeading.split(" ")[0]}</span>{" "}
-            {t.offerHeading.split(" ").slice(1).join(" ")}
+        {/* What I offer */}
+        <section className="mb-20 lg:mb-28">
+          <h2 className="text-[clamp(1.85rem,3.4vw,2.5rem)] mb-8 lg:mb-10 text-ink leading-tight">
+            <span className="italic font-medium">{t.offerHeading.split(" ")[0]}</span>{" "}
+            <span className="font-normal">{t.offerHeading.split(" ").slice(1).join(" ")}</span>
           </h2>
           <ol className="flex flex-col">
-            {t.offers.map((item, i) => (
-              <li
-                key={item.title}
-                className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-7 py-6 border-t border-rule last:border-b"
-              >
-                <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-accent pt-1.5">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="flex flex-col gap-1.5">
-                  <span className="font-serif text-[1.45rem] leading-tight text-ink">
-                    {item.title}
+            {t.offers.map((item, i) => {
+              const Icon = OFFER_ICONS[i] ?? IconClipboard;
+              return (
+                <li
+                  key={item.title}
+                  className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-6 py-6 border-t border-rule last:border-b items-start"
+                >
+                  <span className="text-ink shrink-0 w-10 h-10 sm:w-11 sm:h-11 pt-0.5">
+                    <Icon />
                   </span>
-                  <span className="text-ink-muted text-[15.5px] leading-[1.55] max-w-[58ch]">
-                    {item.detail}
-                  </span>
-                </div>
-              </li>
-            ))}
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-[1.45rem] sm:text-[1.5rem] leading-tight text-ink font-medium">
+                      {item.title}
+                    </span>
+                    <span className="text-ink-muted text-[16px] leading-[1.55] max-w-[58ch]">
+                      {item.detail}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
           </ol>
         </section>
+      </div>
 
-        {/* Video placeholder */}
-        <section className="mb-16 lg:mb-20">
-          <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.4rem)] mb-6 lg:mb-8 text-ink">
-            <span className="italic">{t.videoHeading.split(" ")[0]}</span>{" "}
-            {t.videoHeading.split(" ").slice(1).join(" ")}
+      {/* Testimonial sticky-stack — full-width so cards can centre + drift  */}
+      <section className="px-6 sm:px-10 lg:px-16 mb-20 lg:mb-28">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-[clamp(1.85rem,3.4vw,2.5rem)] mb-10 lg:mb-14 text-ink leading-tight">
+            <span className="italic font-medium">{t.testimonialsHeading.split(" ")[0]}</span>{" "}
+            <span className="font-normal">{t.testimonialsHeading.split(" ").slice(1).join(" ")}</span>
           </h2>
-          <div className="relative aspect-video border border-rule bg-paper-deep flex flex-col items-center justify-center text-center gap-2">
-            <span
-              aria-hidden
-              className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint"
-            >
-              ▶
-            </span>
-            <span className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-muted">
-              {t.videoComing}
-            </span>
-          </div>
-        </section>
+        </div>
 
+        {/* The stack */}
+        <div className="relative mx-auto max-w-md">
+          {[1, 2, 3, 4].map((n, i) => (
+            <div
+              key={n}
+              className="sticky mb-[55vh] w-full"
+              style={{
+                top: `calc(14vh + ${i * 18}px)`,
+                zIndex: 10 + i,
+                transform: `rotate(${cardRotations[i % cardRotations.length]})`,
+                transformOrigin: "center top",
+              }}
+            >
+              <div className="shadow-[0_22px_40px_-22px_rgba(20,17,13,0.45),0_8px_18px_-12px_rgba(20,17,13,0.25)] rounded-[2.5rem]">
+                <PlaceholderTestimonial n={n} label={t.testimonialsPlaceholder} />
+              </div>
+            </div>
+          ))}
+          {/* Bottom buffer so the last card has space to settle */}
+          <div className="h-[20vh]" />
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-3xl px-0">
         {/* Closing CTA */}
-        <section className="border-t border-rule pt-12 flex flex-col items-start gap-3">
-          <a
-            href={waLink(t.waMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 bg-accent text-paper px-6 py-4 font-mono text-[12px] tracking-[0.2em] uppercase hover:bg-accent-soft transition-colors duration-200"
-          >
-            <span aria-hidden className="text-base leading-none">↗</span>
-            {t.ctaPrimary}
-          </a>
-          <p className="font-serif italic text-ink/80 text-[17px]">
-            {t.ctaSub}
-          </p>
+        <section className="border-t border-rule pt-14 mb-16">
+          <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
         </section>
 
         {/* Footer */}
-        <footer className="mt-20 pt-8 border-t border-rule font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint">
+        <footer className="pt-8 border-t border-rule font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint text-center">
           {t.footer}
         </footer>
       </div>
