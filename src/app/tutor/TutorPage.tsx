@@ -360,19 +360,14 @@ export function TutorPage() {
           </h2>
         </div>
 
-        {/* The stack — uniform paper cards with the kids' own words */}
+        {/* The stack — uniform paper cards with the kids' own words. */}
         <div className="relative mx-auto max-w-xl">
-          {TESTIMONIALS.map((quote, i) => {
-            const isLast = i === TESTIMONIALS.length - 1;
-            return (
+          {TESTIMONIALS.map((quote, i) => (
             <div
               key={i}
-              // Last card is NOT sticky — sits in normal flow so "What I
-              // offer" pushes up directly behind it instead of trailing
-              // empty viewport space below a pinned card.
-              className={`${isLast ? "relative" : "sticky"} ${isLast ? "" : "mb-[16vh]"} w-full flex justify-center`}
+              className="sticky mb-[16vh] last:mb-0 w-full flex justify-center"
               style={{
-                top: isLast ? undefined : `calc(12vh + ${i * 5}px)`,
+                top: `calc(12vh + ${i * 5}px)`,
                 zIndex: 10 + i,
                 transform: `rotate(${cardRotations[i % cardRotations.length]})`,
                 transformOrigin: "center top",
@@ -405,8 +400,7 @@ export function TutorPage() {
                 </figcaption>
               </figure>
             </div>
-            );
-          })}
+          ))}
         </div>
       </section>
 
