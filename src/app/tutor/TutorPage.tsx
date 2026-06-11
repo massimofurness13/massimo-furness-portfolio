@@ -242,18 +242,21 @@ function WhatsAppCTA({
 
 /* ---------------- Page ---------------- */
 
-// Real pupil testimonial screenshots — drop more at
-// /public/tutor/testimonials/NN.png and add (with intrinsic dimensions
-// so the layout doesn't shrink them to unreadable text).
-const TESTIMONIALS = [
-  { src: "/tutor/testimonials/01.png", w: 731, h: 31 },
-  { src: "/tutor/testimonials/02.png", w: 231, h: 71 },
-  { src: "/tutor/testimonials/03.png", w: 955, h: 28 },
-  { src: "/tutor/testimonials/04.png", w: 230, h: 123 },
-  { src: "/tutor/testimonials/05.png", w: 1297, h: 50 },
-  { src: "/tutor/testimonials/06.png", w: 220, h: 71 },
-  { src: "/tutor/testimonials/07.png", w: 225, h: 57 },
-  { src: "/tutor/testimonials/08.png", w: 222, h: 129 },
+// Real pupil quotes — typed out verbatim from the children's own
+// writing. Spelling and capitalisation kept as they wrote it.
+const TESTIMONIALS: string[] = [
+  "Mr Furness because he is more like a friend than teacher, besides he is funny, respectful, kind, caring and the GOAT.",
+  "Mr Furness because he is one of the greatest teachers of the world. His way of learning is super cool, he connects very well with me. He has taught me a lot about a lot of things, and his very funny.",
+  "My favourite teacher is Mr Furness beacuse hes the most chill, fun and nicest teacher ive ever had, he makes classes more fun and enjoyable, if you need something he will give it to you, he helps you when you need it and cares about you.",
+  "I feel like this has been one of the best, possibly the best year of my school life. The biggest reason our teacher, Mr Furness is the best ever teacher he's so nice and the GOAT.",
+  "Mr Furness has been my favorite teacher in my whole life.",
+  "Mister Furness is very nice and funny. He made 5 grade better and made it funner. He showed us ways to learn faster and he is very kind. He helped me make great projects. He is super chill.",
+  "I really enjoyed 5 grade and Mr Furness is the best teacher in the world.",
+  "I will really miss Mr Furness because he was my friend and also he was a good teacher.",
+  "Mr Furness was a great teacher, he is kind and funny. I liked this year — it was a fun roller coaster. I learned a lot. Now I draw better.",
+  "Mr Furness because he is my first male teacher, he is very fun and cool.",
+  "Mr Furness because he plays footbal with us and he is funny.",
+  "My school year with Mr Furness — because I really enjoyed studying different topics with his explanations.",
 ];
 
 export function TutorPage() {
@@ -417,41 +420,43 @@ export function TutorPage() {
           </h2>
         </div>
 
-        {/* The stack — pupil quote screenshots styled as paper notes */}
-        <div className="relative mx-auto max-w-3xl">
-          {TESTIMONIALS.map((tst, i) => (
+        {/* The stack — uniform paper cards with the kids' own words */}
+        <div className="relative mx-auto max-w-xl">
+          {TESTIMONIALS.map((quote, i) => (
             <div
-              key={tst.src}
-              className="sticky mb-[42vh] w-full flex justify-center px-4"
+              key={i}
+              className="sticky mb-[38vh] w-full flex justify-center px-4"
               style={{
-                top: `calc(18vh + ${i * 10}px)`,
+                top: `calc(16vh + ${i * 8}px)`,
                 zIndex: 10 + i,
                 transform: `rotate(${cardRotations[i % cardRotations.length]})`,
                 transformOrigin: "center top",
               }}
             >
               <figure
-                className="bg-[#fffdf8] border border-rule p-6 sm:p-8 shadow-[0_24px_42px_-22px_rgba(20,17,13,0.42),0_8px_18px_-12px_rgba(20,17,13,0.22)] max-w-full"
-                style={{ width: "fit-content" }}
+                className="bg-[#fffdf8] border border-rule shadow-[0_24px_42px_-22px_rgba(20,17,13,0.42),0_8px_18px_-12px_rgba(20,17,13,0.22)] w-full max-w-[28rem] px-7 py-8 sm:px-9 sm:py-10 relative"
                 aria-label={`${t.testimonialsPlaceholder} ${i + 1}`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={tst.src}
-                  alt={t.testimonialsPlaceholder}
-                  width={tst.w}
-                  height={tst.h}
-                  loading="lazy"
-                  className="block h-auto"
+                <span
+                  aria-hidden
+                  className="absolute text-accent italic leading-none select-none"
                   style={{
-                    // Source resolutions vary wildly. Display at natural width
-                    // up to a sensible cap, never wider than the container.
-                    width: `min(${tst.w}px, 100%)`,
-                    maxWidth: "min(720px, 100%)",
+                    top: "0.35rem",
+                    left: "0.9rem",
+                    fontSize: "4.5rem",
+                    fontFamily: "var(--font-instrument-serif), Georgia, serif",
                   }}
-                />
-                <figcaption className="mt-4 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-faint">
-                  Pupil · 2025–26
+                >
+                  &ldquo;
+                </span>
+                <blockquote
+                  className="text-ink text-[17px] sm:text-[17.5px] leading-[1.55]"
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                >
+                  {quote}
+                </blockquote>
+                <figcaption className="mt-5 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-faint">
+                  Pupil · Year 5
                 </figcaption>
               </figure>
             </div>
