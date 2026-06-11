@@ -32,7 +32,7 @@ const COPY: Record<Lang, Copy> = {
     intro:
       "Hello — I'm Mr Furness. I've taught primary children for six years, in London and in international schools. I now tutor online, one-to-one.",
     ctaPrimary: "Message me on WhatsApp",
-    ctaScarcity: "A few spaces open this term — first come, first served.",
+    ctaScarcity: "Limited spaces — first come, first served.",
     offerHeading: "What I offer",
     offers: [
       {
@@ -74,7 +74,7 @@ const COPY: Record<Lang, Copy> = {
     intro:
       "Hola — soy Mr Furness. He enseñado primaria durante seis años, en colegios de Londres e internacionales. Ahora doy clases particulares online, uno a uno.",
     ctaPrimary: "Escríbeme por WhatsApp",
-    ctaScarcity: "Quedan algunas plazas este trimestre — por orden de llegada.",
+    ctaScarcity: "Plazas limitadas — por orden de llegada.",
     offerHeading: "Lo que ofrezco",
     offers: [
       {
