@@ -14,7 +14,6 @@ type Copy = {
   name: string;
   tagline: string;
   intro: string;
-  credentials: string[];
   ctaPrimary: string;
   offerHeading: string;
   offers: Offer[];
@@ -27,16 +26,10 @@ type Copy = {
 const COPY: Record<Lang, Copy> = {
   en: {
     eyebrow: "PRIVATE ONLINE TUITION",
-    name: "Massimo Furness",
+    name: "Mr Furness",
     tagline: "Maths & English tutor",
     intro:
-      "Hi — I'm Massimo. I've taught primary children for six years, in London and in international schools. I now tutor online, one-to-one.",
-    credentials: [
-      "English instruction by a native speaker",
-      "White Rose Maths expert",
-      "6 years primary teaching · London & international",
-      "Online · Year 1–6",
-    ],
+      "Hello — I'm Mr Furness. I've taught primary children for six years, in London and in international schools. I now tutor online, one-to-one.",
     ctaPrimary: "Message me on WhatsApp",
     offerHeading: "What I offer",
     offers: [
@@ -68,22 +61,16 @@ const COPY: Record<Lang, Copy> = {
     ],
     testimonialsHeading: "What my pupils say",
     testimonialsPlaceholder: "Testimonial",
-    footer: "© Massimo Furness · Private tuition enquiries",
+    footer: "© Mr Furness · Private tuition enquiries",
     waMessage:
-      "Hi Massimo, I saw your tutor page and would like to ask about tuition for my child.",
+      "Hi Mr Furness, I saw your tutor page and would like to ask about tuition for my child.",
   },
   es: {
     eyebrow: "CLASES PARTICULARES ONLINE",
-    name: "Massimo Furness",
+    name: "Mr Furness",
     tagline: "Profesor de matemáticas e inglés",
     intro:
-      "Hola — soy Massimo. He enseñado primaria durante seis años, en colegios de Londres e internacionales. Ahora doy clases particulares online, uno a uno.",
-    credentials: [
-      "Inglés enseñado por un nativo",
-      "Experto en White Rose Maths",
-      "6 años enseñando primaria · Londres y colegios internacionales",
-      "Online · Year 1–6",
-    ],
+      "Hola — soy Mr Furness. He enseñado primaria durante seis años, en colegios de Londres e internacionales. Ahora doy clases particulares online, uno a uno.",
     ctaPrimary: "Escríbeme por WhatsApp",
     offerHeading: "Lo que ofrezco",
     offers: [
@@ -115,9 +102,9 @@ const COPY: Record<Lang, Copy> = {
     ],
     testimonialsHeading: "Lo que dicen mis alumnos",
     testimonialsPlaceholder: "Testimonio",
-    footer: "© Massimo Furness · Consultas de clases particulares",
+    footer: "© Mr Furness · Consultas de clases particulares",
     waMessage:
-      "Hola Massimo, vi tu página de tutorías y me gustaría preguntar sobre clases para mi hijo o hija.",
+      "Hola Mr Furness, vi tu página de tutorías y me gustaría preguntar sobre clases para mi hijo o hija.",
   },
 };
 
@@ -335,7 +322,7 @@ export function TutorPage() {
           <div className="shrink-0 overflow-hidden rounded-full border border-rule w-32 h-32 sm:w-44 sm:h-44 bg-paper-deep">
             <Image
               src="/tutor/photo.svg"
-              alt={`${t.name} portrait`}
+              alt={`${t.name} — portrait`}
               width={400}
               height={400}
               className="w-full h-full object-cover"
@@ -357,58 +344,9 @@ export function TutorPage() {
         </header>
 
         {/* Personal intro */}
-        <p className="text-ink text-[18px] sm:text-[19px] leading-[1.55] max-w-[60ch] mb-10 lg:mb-12">
+        <p className="text-ink text-[18px] sm:text-[19px] leading-[1.55] max-w-[60ch] mb-16 lg:mb-20">
           {t.intro}
         </p>
-
-        {/* Credential flexes */}
-        <ul className="flex flex-col gap-2.5 mb-12 lg:mb-16">
-          {t.credentials.map((c) => (
-            <li key={c} className="flex items-baseline gap-3">
-              <span
-                aria-hidden
-                className="inline-block w-1.5 h-1.5 rounded-full bg-accent shrink-0 translate-y-[-3px]"
-              />
-              <span className="text-ink text-[17px] leading-[1.5]">{c}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Primary CTA — centred, green */}
-        <div className="mb-20 lg:mb-28">
-          <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
-        </div>
-
-        {/* What I offer */}
-        <section className="mb-20 lg:mb-28">
-          <h2 className="text-[clamp(1.85rem,3.4vw,2.5rem)] mb-8 lg:mb-10 text-ink leading-tight">
-            <span className="italic font-medium">{t.offerHeading.split(" ")[0]}</span>{" "}
-            <span className="font-normal">{t.offerHeading.split(" ").slice(1).join(" ")}</span>
-          </h2>
-          <ol className="flex flex-col">
-            {t.offers.map((item, i) => {
-              const Icon = OFFER_ICONS[i] ?? IconClipboard;
-              return (
-                <li
-                  key={item.title}
-                  className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-6 py-6 border-t border-rule last:border-b items-start"
-                >
-                  <span className="text-ink shrink-0 w-10 h-10 sm:w-11 sm:h-11 pt-0.5">
-                    <Icon />
-                  </span>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="text-[1.45rem] sm:text-[1.5rem] leading-tight text-ink font-medium">
-                      {item.title}
-                    </span>
-                    <span className="text-ink-muted text-[16px] leading-[1.55] max-w-[58ch]">
-                      {item.detail}
-                    </span>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </section>
       </div>
 
       {/* Testimonial sticky-stack — full-width so cards can centre + drift  */}
@@ -467,8 +405,39 @@ export function TutorPage() {
       </section>
 
       <div className="mx-auto max-w-3xl px-0">
-        {/* Closing CTA */}
-        <section className="border-t border-rule pt-14 mb-16">
+        {/* What I offer */}
+        <section className="mb-20 lg:mb-28">
+          <h2 className="text-[clamp(1.85rem,3.4vw,2.5rem)] mb-8 lg:mb-10 text-ink leading-tight">
+            <span className="italic font-medium">{t.offerHeading.split(" ")[0]}</span>{" "}
+            <span className="font-normal">{t.offerHeading.split(" ").slice(1).join(" ")}</span>
+          </h2>
+          <ol className="flex flex-col">
+            {t.offers.map((item, i) => {
+              const Icon = OFFER_ICONS[i] ?? IconClipboard;
+              return (
+                <li
+                  key={item.title}
+                  className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-6 py-6 border-t border-rule last:border-b items-start"
+                >
+                  <span className="text-ink shrink-0 w-10 h-10 sm:w-11 sm:h-11 pt-0.5">
+                    <Icon />
+                  </span>
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-[1.45rem] sm:text-[1.5rem] leading-tight text-ink font-medium">
+                      {item.title}
+                    </span>
+                    <span className="text-ink-muted text-[16px] leading-[1.55] max-w-[58ch]">
+                      {item.detail}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+
+        {/* Single closing CTA */}
+        <section className="mb-16">
           <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
         </section>
 

@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     nocache: true,
     googleBot: { index: false, follow: false },
   },
-  title: "Massimo Furness — Tutor",
+  title: "Mr Furness — Private Tutor",
   description:
-    "Private maths and English tuition with a British native primary school teacher.",
+    "Private maths and English tuition with a British primary school teacher.",
 };
 
 export default function Page() {
