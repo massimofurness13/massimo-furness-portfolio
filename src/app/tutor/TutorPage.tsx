@@ -229,20 +229,22 @@ function WhatsAppCTA({
 
 /* ---------------- Page ---------------- */
 
-// Real pupil quotes — kept close to the children's own writing.
-// Spelling, "Mr Furness" capitalisation and pupil voice preserved.
+// Real pupil quotes — verbatim from the children's own writing.
+// All spelling, punctuation, lowercase mr/mister/his, run-ons,
+// missing apostrophes and word ordering preserved exactly. Do not
+// "fix" these — the raw voice is the whole point.
 const TESTIMONIALS: string[] = [
   "A great thing was our teacher, Mr Furness. He was really fun, understood us, and even let us send him memes.",
-  "Mr Furness because he is more like a friend than teacher, besides he is funny, respectful, kind, caring and the GOAT.",
-  "Mr Furness because he is one of the greatest teachers of the world. His way of learning is super cool, he connects very well with me. He has taught me a lot about a lot of things, and his very funny.",
-  "My favourite teacher is Mr Furness beacuse hes the most chill, fun and nicest teacher ive ever had, he makes classes more fun and enjoyable, if you need something he will give it to you, he helps you when you need it and cares about you.",
-  "I feel like this has been one of the best, possibly the best year of my school life. The biggest reason our teacher, Mr Furness is the best ever teacher he's so nice and the GOAT.",
-  "Mister Furness is very nice and funny. He made 5 grade better and made it funner. He showed us ways to learn faster and he is very kind. He helped me make great projects. He is super chill.",
-  "I will really miss Mr Furness because he was my friend and also he was a good teacher.",
-  "Mr Furness was a great teacher, he is kind and funny. I liked this year — it was a fun roller coaster. I learned a lot. Now I draw better.",
-  "Mr Furness because he is my first male teacher, he is very fun and cool.",
-  "Mr Furness because he plays footbal with us and he is funny.",
-  "My school year with Mr Furness — because I really enjoyed studying different topics with his explanations.",
+  "Mr Furness because he is more like a friend than teacher besides he is funny, respectful, kind, caring and the GOAT.",
+  "Mr Furness  because he is the one of the greatest teachers of the world. his is very cool and modern, his way of learning is super cool, he connects very well with me. He has taught me a lot about a lot of things, and his very funny.",
+  "My favourite teacher is Mr. Furness beacuse hes the most chill, fun and nicest teacher ive ever had, he makes classes more fun and enjoyable, if you need something he will give it to you, he helps you when you need it and cares about you.",
+  "I feel like this has been one of the best possibly the best year of my school life. The biggest reason our teacher, Mr furness is the best ever teacher he's so nice and the GOAT. Also I feel like I've just enjoyed this year a lot in overall we've played a lot of blooket and it's been fun",
+  "me whenever i needed it.mister furness he is very nice and funny he made 5 grade better and made it funner he put funny videos and let us sent him he showed us ways to learn faster and he is very kind he helped me make great projects he is super chill.",
+  "I will really miss mr Furness because he was my friend and also he was a good teacher .",
+  "This year math was awesome IPC was okay the unit free inquiry was very fun.i didnt like english it is boring spanish was okay not when it wednesday.i had an amazing year mr furness was a great teacher he is kind and funny.i liked this year it was a fun roller coaster i learned alot now i draw better",
+  "Mr Furness because he is my first male teacher he is very fun and cool,",
+  "Mr.Furness because he play with us footbal and he is funny.",
+  "my school year with Mr. Furness, because I really enjoyed studying different topics with his explanations",
 ];
 
 export function TutorPage() {
