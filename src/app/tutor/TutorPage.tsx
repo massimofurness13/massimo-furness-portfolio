@@ -322,11 +322,12 @@ export function TutorPage() {
         <header className="flex flex-col sm:flex-row gap-5 sm:gap-10 items-start sm:items-center mb-8 lg:mb-10">
           <div className="shrink-0 overflow-hidden rounded-full border border-rule w-28 h-28 sm:w-44 sm:h-44 bg-paper-deep">
             <Image
-              src="/tutor/photo.svg"
+              src="/tutor/photo.jpg"
               alt={`${t.name} — portrait`}
-              width={400}
-              height={400}
+              width={1290}
+              height={844}
               className="w-full h-full object-cover"
+              style={{ objectPosition: "50% 25%" }}
               priority
             />
           </div>
