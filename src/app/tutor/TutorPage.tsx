@@ -212,12 +212,12 @@ function WhatsAppCTA({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="group inline-flex items-center gap-3 bg-[#25D366] text-white px-7 py-4 rounded-full shadow-[0_8px_24px_-10px_rgba(37,211,102,0.55)] hover:bg-[#1ebe5d] transition-colors duration-200 font-medium text-[16px] tracking-[0.01em]"
+        className="group inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-7 py-4 sm:py-4 rounded-full shadow-[0_8px_24px_-10px_rgba(37,211,102,0.55)] hover:bg-[#1ebe5d] active:bg-[#1ebe5d] transition-colors duration-200 font-medium text-[16px] sm:text-[16px] tracking-[0.01em] min-h-[52px] w-full max-w-[22rem] sm:w-auto"
       >
         <svg
           aria-hidden="true"
           viewBox="0 0 32 32"
-          className="w-5 h-5 fill-white"
+          className="w-5 h-5 fill-white shrink-0"
         >
           <path d="M16 .5C7.453.5.5 7.453.5 16c0 2.825.74 5.59 2.146 8.028L0 32l8.197-2.625A15.43 15.43 0 0 0 16 31.5c8.547 0 15.5-6.953 15.5-15.5S24.547.5 16 .5Zm0 28.25a13.18 13.18 0 0 1-6.717-1.842l-.482-.286-4.866 1.558 1.581-4.74-.314-.5A13.21 13.21 0 0 1 2.75 16C2.75 8.693 8.693 2.75 16 2.75c7.307 0 13.25 5.943 13.25 13.25S23.307 28.75 16 28.75Zm7.272-9.92c-.398-.2-2.358-1.165-2.722-1.297-.365-.133-.63-.2-.895.2-.265.398-1.025 1.297-1.258 1.563-.232.265-.464.298-.862.099-.398-.199-1.682-.62-3.205-1.977-1.184-1.056-1.983-2.359-2.215-2.758-.232-.398-.025-.614.174-.812.18-.18.398-.464.597-.696.2-.232.265-.398.398-.663.132-.265.066-.498-.033-.696-.099-.199-.895-2.157-1.226-2.952-.323-.775-.65-.67-.895-.683-.232-.012-.498-.014-.762-.014-.265 0-.696.099-1.06.498-.365.398-1.392 1.36-1.392 3.318 0 1.957 1.425 3.847 1.624 4.112.199.265 2.804 4.282 6.794 6.005.95.41 1.69.655 2.267.84.953.302 1.82.26 2.504.158.764-.114 2.358-.964 2.69-1.895.332-.93.332-1.728.232-1.895-.099-.166-.365-.265-.762-.464Z" />
         </svg>
@@ -271,7 +271,8 @@ export function TutorPage() {
   return (
     <main
       // Switch the whole tutor page to a warmer humanist serif + lightly softened axis.
-      className="px-6 sm:px-10 lg:px-16 py-12 lg:py-20"
+      // overflow-x-clip prevents tilted testimonial cards from causing horizontal scroll on phones.
+      className="px-5 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-14 overflow-x-clip"
       style={{
         // Override the default body font on this page only.
         ["--font-sans" as never]: "var(--font-fraunces)",
@@ -281,7 +282,7 @@ export function TutorPage() {
     >
       <div className="mx-auto max-w-3xl">
         {/* Language toggle */}
-        <div className="flex items-center justify-end mb-10 lg:mb-12">
+        <div className="flex items-center justify-end mb-6 lg:mb-8">
           <div
             role="group"
             aria-label="Language"
@@ -318,8 +319,8 @@ export function TutorPage() {
         </div>
 
         {/* Hero */}
-        <header className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start sm:items-center mb-10 lg:mb-12">
-          <div className="shrink-0 overflow-hidden rounded-full border border-rule w-32 h-32 sm:w-44 sm:h-44 bg-paper-deep">
+        <header className="flex flex-col sm:flex-row gap-5 sm:gap-10 items-start sm:items-center mb-8 lg:mb-10">
+          <div className="shrink-0 overflow-hidden rounded-full border border-rule w-28 h-28 sm:w-44 sm:h-44 bg-paper-deep">
             <Image
               src="/tutor/photo.svg"
               alt={`${t.name} — portrait`}
@@ -329,30 +330,30 @@ export function TutorPage() {
               priority
             />
           </div>
-          <div className="flex flex-col gap-3">
-            <span className="font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-muted">
+          <div className="flex flex-col gap-2 sm:gap-3">
+            <span className="font-mono text-[10px] sm:text-[10.5px] tracking-[0.22em] uppercase text-ink-muted">
               {t.eyebrow}
             </span>
-            <h1 className="text-[clamp(2.5rem,5.5vw,4rem)] leading-[1] text-ink">
+            <h1 className="text-[clamp(2.25rem,8vw,4rem)] leading-[1] text-ink">
               <span className="italic font-medium">{t.name.split(" ")[0]}</span>{" "}
               <span className="font-normal">{t.name.split(" ").slice(1).join(" ")}.</span>
             </h1>
-            <p className="italic text-2xl sm:text-[1.75rem] text-ink/85 leading-tight">
+            <p className="italic text-[1.35rem] sm:text-[1.75rem] text-ink/85 leading-tight">
               {t.tagline}
             </p>
           </div>
         </header>
 
         {/* Personal intro */}
-        <p className="text-ink text-[18px] sm:text-[19px] leading-[1.55] max-w-[60ch] mb-16 lg:mb-20">
+        <p className="text-ink text-[17px] sm:text-[19px] leading-[1.55] max-w-[60ch] mb-10 lg:mb-12">
           {t.intro}
         </p>
       </div>
 
-      {/* Testimonial sticky-stack — full-width so cards can centre + drift  */}
-      <section className="px-6 sm:px-10 lg:px-16 mb-20 lg:mb-28">
+      {/* Testimonial sticky-stack — uses the page's existing horizontal padding */}
+      <section className="mb-10 lg:mb-14">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-[clamp(1.85rem,3.4vw,2.5rem)] mb-10 lg:mb-14 text-ink leading-tight">
+          <h2 className="text-[clamp(1.65rem,6vw,2.5rem)] mb-6 lg:mb-8 text-ink leading-tight">
             <span className="italic font-medium">{t.testimonialsHeading.split(" ")[0]}</span>{" "}
             <span className="font-normal">{t.testimonialsHeading.split(" ").slice(1).join(" ")}</span>
           </h2>
@@ -363,16 +364,16 @@ export function TutorPage() {
           {TESTIMONIALS.map((quote, i) => (
             <div
               key={i}
-              className="sticky mb-[18vh] w-full flex justify-center px-4"
+              className="sticky mb-[16vh] w-full flex justify-center"
               style={{
-                top: `calc(14vh + ${i * 6}px)`,
+                top: `calc(12vh + ${i * 5}px)`,
                 zIndex: 10 + i,
                 transform: `rotate(${cardRotations[i % cardRotations.length]})`,
                 transformOrigin: "center top",
               }}
             >
               <figure
-                className="bg-[#fffdf8] border border-rule shadow-[0_24px_42px_-22px_rgba(20,17,13,0.42),0_8px_18px_-12px_rgba(20,17,13,0.22)] w-full max-w-[26rem] px-6 py-7 sm:px-7 sm:py-8 relative"
+                className="bg-[#fffdf8] border border-rule shadow-[0_24px_42px_-22px_rgba(20,17,13,0.42),0_8px_18px_-12px_rgba(20,17,13,0.22)] w-full max-w-[26rem] px-5 py-6 sm:px-7 sm:py-8 relative"
                 aria-label={`${t.testimonialsPlaceholder} ${i + 1}`}
               >
                 <span
@@ -406,8 +407,8 @@ export function TutorPage() {
 
       <div className="mx-auto max-w-3xl px-0">
         {/* What I offer */}
-        <section className="mb-20 lg:mb-28">
-          <h2 className="text-[clamp(1.85rem,3.4vw,2.5rem)] mb-8 lg:mb-10 text-ink leading-tight">
+        <section className="mb-10 lg:mb-14">
+          <h2 className="text-[clamp(1.65rem,6vw,2.5rem)] mb-6 lg:mb-8 text-ink leading-tight">
             <span className="italic font-medium">{t.offerHeading.split(" ")[0]}</span>{" "}
             <span className="font-normal">{t.offerHeading.split(" ").slice(1).join(" ")}</span>
           </h2>
@@ -417,16 +418,16 @@ export function TutorPage() {
               return (
                 <li
                   key={item.title}
-                  className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-6 py-6 border-t border-rule last:border-b items-start"
+                  className="grid grid-cols-[auto_1fr] gap-x-4 sm:gap-x-6 py-5 sm:py-6 border-t border-rule last:border-b items-start"
                 >
-                  <span className="text-ink shrink-0 w-10 h-10 sm:w-11 sm:h-11 pt-0.5">
+                  <span className="text-ink shrink-0 w-9 h-9 sm:w-11 sm:h-11 pt-0.5">
                     <Icon />
                   </span>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-[1.45rem] sm:text-[1.5rem] leading-tight text-ink font-medium">
+                    <span className="text-[1.2rem] sm:text-[1.5rem] leading-tight text-ink font-medium">
                       {item.title}
                     </span>
-                    <span className="text-ink-muted text-[16px] leading-[1.55] max-w-[58ch]">
+                    <span className="text-ink-muted text-[15px] sm:text-[16px] leading-[1.5] max-w-[58ch]">
                       {item.detail}
                     </span>
                   </div>
@@ -437,12 +438,12 @@ export function TutorPage() {
         </section>
 
         {/* Single closing CTA */}
-        <section className="mb-16">
+        <section className="mb-10">
           <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
         </section>
 
         {/* Footer */}
-        <footer className="pt-8 border-t border-rule font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint text-center">
+        <footer className="pt-6 border-t border-rule font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint text-center">
           {t.footer}
         </footer>
       </div>
