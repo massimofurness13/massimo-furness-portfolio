@@ -49,9 +49,9 @@ const COPY: Record<Lang, Copy> = {
           "Set after every lesson to keep the momentum going between sessions.",
       },
       {
-        title: "Engagement tracking",
+        title: "Progress tracking",
         detail:
-          "I watch what lands, what doesn't, and what we need to come back to next week.",
+          "I keep data on every lesson and use it to find the gaps — then turn those gaps into targets for the next session.",
       },
       {
         title: "An email to you after every lesson",
@@ -90,9 +90,9 @@ const COPY: Record<Lang, Copy> = {
           "Después de cada clase, para mantener el ritmo entre sesiones.",
       },
       {
-        title: "Seguimiento de su atención",
+        title: "Seguimiento de progreso",
         detail:
-          "Observo qué entienden, qué se les escapa y qué hay que repasar la semana siguiente.",
+          "Guardo datos de cada clase y los uso para identificar las lagunas — y convertirlas en objetivos para la siguiente sesión.",
       },
       {
         title: "Un email para ti después de cada clase",
@@ -240,11 +240,7 @@ const TESTIMONIALS: string[] = [
   "A great thing was our teacher, Mr Furness. He was really fun, understood us, and even let us send him memes.",
   "Mr Furness because he is more like a friend than teacher besides he is funny, respectful, kind, caring and the GOAT.",
   "me whenever i needed it.mister furness he is very nice and funny he made 5 grade better and made it funner he put funny videos and let us sent him he showed us ways to learn faster and he is very kind he helped me make great projects he is super chill.",
-  "I will really miss mr Furness because he was my friend and also he was a good teacher .",
-  "This year math was awesome IPC was okay the unit free inquiry was very fun.i didnt like english it is boring spanish was okay not when it wednesday.i had an amazing year mr furness was a great teacher he is kind and funny.i liked this year it was a fun roller coaster i learned alot now i draw better",
   "Mr Furness because he is my first male teacher he is very fun and cool,",
-  "Mr.Furness because he play with us footbal and he is funny.",
-  "my school year with Mr. Furness, because I really enjoyed studying different topics with his explanations",
 ];
 
 export function TutorPage() {
