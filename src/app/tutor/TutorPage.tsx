@@ -352,7 +352,7 @@ export function TutorPage() {
       </div>
 
       {/* Testimonial sticky-stack — uses the page's existing horizontal padding */}
-      <section className="mb-10 lg:mb-14">
+      <section className="mb-6 lg:mb-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-[clamp(1.65rem,6vw,2.5rem)] mb-6 lg:mb-8 text-ink leading-tight">
             <span className="italic font-medium">{t.testimonialsHeading.split(" ")[0]}</span>{" "}
@@ -365,7 +365,7 @@ export function TutorPage() {
           {TESTIMONIALS.map((quote, i) => (
             <div
               key={i}
-              className="sticky mb-[16vh] w-full flex justify-center"
+              className="sticky mb-[16vh] last:mb-0 w-full flex justify-center"
               style={{
                 top: `calc(12vh + ${i * 5}px)`,
                 zIndex: 10 + i,
@@ -401,8 +401,6 @@ export function TutorPage() {
               </figure>
             </div>
           ))}
-          {/* Bottom buffer so the last card has space to settle */}
-          <div className="h-[15vh]" />
         </div>
       </section>
 
