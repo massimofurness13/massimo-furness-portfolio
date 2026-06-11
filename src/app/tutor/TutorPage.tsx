@@ -392,7 +392,7 @@ export function TutorPage() {
                   {quote}
                 </blockquote>
                 <figcaption className="mt-4 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-faint">
-                  Pupil · Year 5
+                  Pupil · Grade 5
                 </figcaption>
               </figure>
             </div>
