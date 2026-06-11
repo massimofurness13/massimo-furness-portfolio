@@ -363,44 +363,44 @@ export function TutorPage() {
           {TESTIMONIALS.map((quote, i) => (
             <div
               key={i}
-              className="sticky mb-[38vh] w-full flex justify-center px-4"
+              className="sticky mb-[18vh] w-full flex justify-center px-4"
               style={{
-                top: `calc(16vh + ${i * 8}px)`,
+                top: `calc(14vh + ${i * 6}px)`,
                 zIndex: 10 + i,
                 transform: `rotate(${cardRotations[i % cardRotations.length]})`,
                 transformOrigin: "center top",
               }}
             >
               <figure
-                className="bg-[#fffdf8] border border-rule shadow-[0_24px_42px_-22px_rgba(20,17,13,0.42),0_8px_18px_-12px_rgba(20,17,13,0.22)] w-full max-w-[28rem] px-7 py-8 sm:px-9 sm:py-10 relative"
+                className="bg-[#fffdf8] border border-rule shadow-[0_24px_42px_-22px_rgba(20,17,13,0.42),0_8px_18px_-12px_rgba(20,17,13,0.22)] w-full max-w-[26rem] px-6 py-7 sm:px-7 sm:py-8 relative"
                 aria-label={`${t.testimonialsPlaceholder} ${i + 1}`}
               >
                 <span
                   aria-hidden
                   className="absolute text-accent italic leading-none select-none"
                   style={{
-                    top: "0.35rem",
-                    left: "0.9rem",
-                    fontSize: "4.5rem",
+                    top: "0.25rem",
+                    left: "0.75rem",
+                    fontSize: "3.75rem",
                     fontFamily: "var(--font-instrument-serif), Georgia, serif",
                   }}
                 >
                   &ldquo;
                 </span>
                 <blockquote
-                  className="text-ink text-[17px] sm:text-[17.5px] leading-[1.55]"
+                  className="text-ink text-[16px] sm:text-[16.5px] leading-[1.5]"
                   style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                 >
                   {quote}
                 </blockquote>
-                <figcaption className="mt-5 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-faint">
+                <figcaption className="mt-4 font-mono text-[10px] tracking-[0.22em] uppercase text-ink-faint">
                   Pupil · Year 5
                 </figcaption>
               </figure>
             </div>
           ))}
           {/* Bottom buffer so the last card has space to settle */}
-          <div className="h-[25vh]" />
+          <div className="h-[15vh]" />
         </div>
       </section>
 
