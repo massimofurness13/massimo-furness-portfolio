@@ -15,6 +15,7 @@ type Copy = {
   tagline: string;
   intro: string;
   ctaPrimary: string;
+  ctaScarcity: string;
   offerHeading: string;
   offers: Offer[];
   testimonialsHeading: string;
@@ -31,6 +32,7 @@ const COPY: Record<Lang, Copy> = {
     intro:
       "Hello — I'm Mr Furness. I've taught primary children for six years, in London and in international schools. I now tutor online, one-to-one.",
     ctaPrimary: "Message me on WhatsApp",
+    ctaScarcity: "A few spaces open this term — first come, first served.",
     offerHeading: "What I offer",
     offers: [
       {
@@ -72,6 +74,7 @@ const COPY: Record<Lang, Copy> = {
     intro:
       "Hola — soy Mr Furness. He enseñado primaria durante seis años, en colegios de Londres e internacionales. Ahora doy clases particulares online, uno a uno.",
     ctaPrimary: "Escríbeme por WhatsApp",
+    ctaScarcity: "Quedan algunas plazas este trimestre — por orden de llegada.",
     offerHeading: "Lo que ofrezco",
     offers: [
       {
@@ -436,6 +439,9 @@ export function TutorPage() {
 
         {/* Single closing CTA */}
         <section className="mb-10">
+          <p className="italic text-ink/85 text-center text-[16px] sm:text-[17px] leading-relaxed mb-5 max-w-[34ch] mx-auto">
+            {t.ctaScarcity}
+          </p>
           <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
         </section>
 
