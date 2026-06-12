@@ -272,7 +272,7 @@ export function TutorPage() {
     <main
       // Switch the whole tutor page to a warmer humanist serif + lightly softened axis.
       // overflow-x-clip prevents tilted testimonial cards from causing horizontal scroll on phones.
-      className="px-5 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-14 overflow-x-clip"
+      className="px-5 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-14 pb-[180px] sm:pb-[160px] overflow-x-clip"
       style={{
         // Override the default body font on this page only.
         ["--font-sans" as never]: "var(--font-fraunces)",
@@ -436,18 +436,29 @@ export function TutorPage() {
           </ol>
         </section>
 
-        {/* Single closing CTA */}
-        <section className="mb-10">
-          <p className="italic text-ink/85 text-center text-[16px] sm:text-[17px] leading-relaxed mb-5 max-w-[34ch] mx-auto">
-            {t.ctaScarcity}
-          </p>
-          <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
-        </section>
-
         {/* Footer */}
         <footer className="pt-6 border-t border-rule font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint text-center">
           {t.footer}
         </footer>
+      </div>
+
+      {/* Floating bottom CTA — always visible while scrolling. */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-50 border-t border-rule px-4 py-3 sm:py-4"
+        style={{
+          backgroundColor:
+            "color-mix(in srgb, var(--color-paper) 92%, transparent)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          fontFamily: "var(--font-fraunces), Georgia, serif",
+        }}
+      >
+        <div className="mx-auto max-w-md flex flex-col items-center gap-2 sm:gap-2.5">
+          <p className="italic text-ink/85 text-center text-[13.5px] sm:text-[14.5px] leading-tight">
+            {t.ctaScarcity}
+          </p>
+          <WhatsAppCTA href={waLink(t.waMessage)} label={t.ctaPrimary} />
+        </div>
       </div>
     </main>
   );
