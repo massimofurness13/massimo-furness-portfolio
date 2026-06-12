@@ -192,6 +192,45 @@ function IconEnvelope() {
   );
 }
 
+/* ---------------- flag icons for the language toggle ---------------- */
+
+function FlagUK({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 60 36"
+      className={className}
+      aria-hidden="true"
+      preserveAspectRatio="none"
+    >
+      <clipPath id="uk-flag-clip">
+        <rect width="60" height="36" />
+      </clipPath>
+      <g clipPath="url(#uk-flag-clip)">
+        <rect width="60" height="36" fill="#012169" />
+        <path d="M0,0 L60,36 M60,0 L0,36" stroke="#fff" strokeWidth="7" />
+        <path d="M0,0 L60,36 M60,0 L0,36" stroke="#C8102E" strokeWidth="3" />
+        <path d="M30,0 V36 M0,18 H60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 V36 M0,18 H60" stroke="#C8102E" strokeWidth="6" />
+      </g>
+    </svg>
+  );
+}
+
+function FlagES({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 60 36"
+      className={className}
+      aria-hidden="true"
+      preserveAspectRatio="none"
+    >
+      <rect width="60" height="9" fill="#AA151B" />
+      <rect y="9" width="60" height="18" fill="#F1BF00" />
+      <rect y="27" width="60" height="9" fill="#AA151B" />
+    </svg>
+  );
+}
+
 const OFFER_ICONS = [
   IconClipboard,
   IconSchool,
@@ -281,39 +320,40 @@ export function TutorPage() {
       }}
     >
       <div className="mx-auto max-w-3xl">
-        {/* Language toggle */}
+        {/* Language toggle — flags + labels, larger tap targets */}
         <div className="flex items-center justify-end mb-6 lg:mb-8">
           <div
             role="group"
             aria-label="Language"
-            className="relative inline-flex items-center border border-rule bg-paper-deep/60 backdrop-blur-sm font-mono text-[10.5px] tracking-[0.22em] uppercase"
+            className="inline-flex items-center gap-1.5 p-1.5 border border-rule bg-paper-deep/70 backdrop-blur-sm rounded-full shadow-[0_2px_8px_-4px_rgba(20,17,13,0.18)]"
           >
-            <span
-              aria-hidden
-              className="absolute top-0 bottom-0 w-[50%] bg-accent/20 border border-accent/40 transition-transform duration-300 ease-out"
-              style={{
-                transform: lang === "en" ? "translateX(0%)" : "translateX(100%)",
-              }}
-            />
             <button
               type="button"
               onClick={() => setLang("en")}
               aria-pressed={lang === "en"}
-              className={`relative z-10 px-4 py-2 transition-colors ${
-                lang === "en" ? "text-ink" : "text-ink-muted hover:text-ink"
+              aria-label="English"
+              className={`flex items-center gap-2 px-4 py-2 rounded-full font-mono text-[12px] tracking-[0.2em] uppercase transition-colors ${
+                lang === "en"
+                  ? "bg-accent/20 text-ink"
+                  : "text-ink-muted hover:text-ink"
               }`}
             >
-              EN
+              <FlagUK className="w-7 h-[18px] rounded-[3px] shadow-[0_1px_2px_rgba(20,17,13,0.25)] shrink-0" />
+              <span>EN</span>
             </button>
             <button
               type="button"
               onClick={() => setLang("es")}
               aria-pressed={lang === "es"}
-              className={`relative z-10 px-4 py-2 transition-colors ${
-                lang === "es" ? "text-ink" : "text-ink-muted hover:text-ink"
+              aria-label="Español"
+              className={`flex items-center gap-2 px-4 py-2 rounded-full font-mono text-[12px] tracking-[0.2em] uppercase transition-colors ${
+                lang === "es"
+                  ? "bg-accent/20 text-ink"
+                  : "text-ink-muted hover:text-ink"
               }`}
             >
-              ES
+              <FlagES className="w-7 h-[18px] rounded-[3px] shadow-[0_1px_2px_rgba(20,17,13,0.25)] shrink-0" />
+              <span>ES</span>
             </button>
           </div>
         </div>
