@@ -31,7 +31,7 @@ const COPY: Record<Lang, Copy> = {
     tagline: "Maths & English tutor",
     intro:
       "Hello — I'm Mr Furness. I've taught primary children for six years, in London and in international schools. I now tutor online, one-to-one.",
-    ctaPrimary: "Message me on WhatsApp",
+    ctaPrimary: "Book a trial lesson now",
     ctaScarcity: "Limited spaces — first come, first served.",
     offerHeading: "What I offer",
     offers: [
@@ -65,7 +65,7 @@ const COPY: Record<Lang, Copy> = {
     testimonialsPlaceholder: "Testimonial",
     footer: "© Mr Furness · Private tuition enquiries",
     waMessage:
-      "Hi Mr Furness, I saw your tutor page and would like to ask about tuition for my child.",
+      "Hi Mr Furness, I saw your tutor page and would like to book a trial lesson for my child.",
   },
   es: {
     eyebrow: "CLASES PARTICULARES ONLINE",
@@ -73,7 +73,7 @@ const COPY: Record<Lang, Copy> = {
     tagline: "Profesor de matemáticas e inglés",
     intro:
       "Hola — soy Mr Furness. He enseñado primaria durante seis años, en colegios de Londres e internacionales. Ahora doy clases particulares online, uno a uno.",
-    ctaPrimary: "Escríbeme por WhatsApp",
+    ctaPrimary: "Reserva una clase de prueba",
     ctaScarcity: "Plazas limitadas — por orden de llegada.",
     offerHeading: "Lo que ofrezco",
     offers: [
@@ -107,7 +107,7 @@ const COPY: Record<Lang, Copy> = {
     testimonialsPlaceholder: "Testimonio",
     footer: "© Mr Furness · Consultas de clases particulares",
     waMessage:
-      "Hola Mr Furness, vi tu página de tutorías y me gustaría preguntar sobre clases para mi hijo o hija.",
+      "Hola Mr Furness, vi tu página de tutorías y me gustaría reservar una clase de prueba para mi hijo o hija.",
   },
 };
 
@@ -391,6 +391,40 @@ export function TutorPage() {
         </p>
       </div>
 
+      {/* What I offer — moved above testimonials so parents see the concrete
+          deliverables before the social proof. */}
+      <div className="mx-auto max-w-3xl px-0">
+        <section className="mb-10 lg:mb-14">
+          <h2 className="text-[clamp(1.65rem,6vw,2.5rem)] mb-6 lg:mb-8 text-ink leading-tight">
+            <span className="italic font-medium">{t.offerHeading.split(" ")[0]}</span>{" "}
+            <span className="font-normal">{t.offerHeading.split(" ").slice(1).join(" ")}</span>
+          </h2>
+          <ol className="flex flex-col">
+            {t.offers.map((item, i) => {
+              const Icon = OFFER_ICONS[i] ?? IconClipboard;
+              return (
+                <li
+                  key={item.title}
+                  className="grid grid-cols-[auto_1fr] gap-x-4 sm:gap-x-6 py-5 sm:py-6 border-t border-rule last:border-b items-start"
+                >
+                  <span className="text-ink shrink-0 w-9 h-9 sm:w-11 sm:h-11 pt-0.5">
+                    <Icon />
+                  </span>
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-[1.2rem] sm:text-[1.5rem] leading-tight text-ink font-medium">
+                      {item.title}
+                    </span>
+                    <span className="text-ink-muted text-[15px] sm:text-[16px] leading-[1.5] max-w-[58ch]">
+                      {item.detail}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      </div>
+
       {/* Testimonial sticky-stack — uses the page's existing horizontal padding */}
       <section className="mb-6 lg:mb-8">
         <div className="mx-auto max-w-3xl">
@@ -445,37 +479,6 @@ export function TutorPage() {
       </section>
 
       <div className="mx-auto max-w-3xl px-0">
-        {/* What I offer */}
-        <section className="mb-10 lg:mb-14">
-          <h2 className="text-[clamp(1.65rem,6vw,2.5rem)] mb-6 lg:mb-8 text-ink leading-tight">
-            <span className="italic font-medium">{t.offerHeading.split(" ")[0]}</span>{" "}
-            <span className="font-normal">{t.offerHeading.split(" ").slice(1).join(" ")}</span>
-          </h2>
-          <ol className="flex flex-col">
-            {t.offers.map((item, i) => {
-              const Icon = OFFER_ICONS[i] ?? IconClipboard;
-              return (
-                <li
-                  key={item.title}
-                  className="grid grid-cols-[auto_1fr] gap-x-4 sm:gap-x-6 py-5 sm:py-6 border-t border-rule last:border-b items-start"
-                >
-                  <span className="text-ink shrink-0 w-9 h-9 sm:w-11 sm:h-11 pt-0.5">
-                    <Icon />
-                  </span>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="text-[1.2rem] sm:text-[1.5rem] leading-tight text-ink font-medium">
-                      {item.title}
-                    </span>
-                    <span className="text-ink-muted text-[15px] sm:text-[16px] leading-[1.5] max-w-[58ch]">
-                      {item.detail}
-                    </span>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </section>
-
         {/* Footer */}
         <footer className="pt-6 border-t border-rule font-mono text-[10.5px] tracking-[0.22em] uppercase text-ink-faint text-center">
           {t.footer}
