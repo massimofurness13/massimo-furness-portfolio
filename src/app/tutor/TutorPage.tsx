@@ -30,7 +30,7 @@ const COPY: Record<Lang, Copy> = {
     name: "Mr Furness",
     tagline: "Maths & English tutor",
     intro:
-      "Hello — I'm Mr Furness. I've taught primary children for six years, in London and in international schools. I now tutor online, one-to-one.",
+      "Hello — I'm Mr Furness, a native English-speaking, QTS-qualified primary teacher with six years' classroom experience in London and at international schools. I offer high-quality one-to-one tutoring in maths and English, entirely online — same care, same methods, same standards as a UK classroom, at your kitchen table.",
     ctaPrimary: "Book a trial lesson now",
     ctaScarcity: "Limited spaces — first come, first served.",
     offerHeading: "What I offer",
@@ -72,7 +72,7 @@ const COPY: Record<Lang, Copy> = {
     name: "Mr Furness",
     tagline: "Profesor de matemáticas e inglés",
     intro:
-      "Hola — soy Mr Furness. He enseñado primaria durante seis años, en colegios de Londres e internacionales. Ahora doy clases particulares online, uno a uno.",
+      "Hola — soy Mr Furness, profesor británico de primaria con la cualificación QTS y seis años de experiencia en colegios de Londres y colegios internacionales. Como hablante nativo de inglés, ofrezco clases particulares de alta calidad de matemáticas e inglés, totalmente online — el mismo cuidado, los mismos métodos y el mismo nivel que en un aula británica, en la mesa de tu cocina.",
     ctaPrimary: "Reserva una clase de prueba",
     ctaScarcity: "Plazas limitadas — por orden de llegada.",
     offerHeading: "Lo que ofrezco",
