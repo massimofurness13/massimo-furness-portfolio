@@ -58,7 +58,7 @@ const COPY: Record<Lang, Copy> = {
       {
         title: "An email to you after every lesson",
         detail:
-          "A short note from me: what we covered, how it went, and what comes next.",
+          "A short note from me: what we covered, how it went, and what comes next. No pressure to reply.",
       },
     ],
     testimonialsHeading: "What my pupils say",
@@ -100,7 +100,7 @@ const COPY: Record<Lang, Copy> = {
       {
         title: "Un email para ti después de cada clase",
         detail:
-          "Una nota breve: qué hemos hecho, cómo ha ido y qué viene después.",
+          "Una nota breve: qué hemos hecho, cómo ha ido y qué viene después. Sin compromiso de responder.",
       },
     ],
     testimonialsHeading: "Lo que dicen mis alumnos",
