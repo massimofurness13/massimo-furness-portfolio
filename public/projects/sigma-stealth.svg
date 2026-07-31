@@ -25,18 +25,6 @@
     opacity="0.95"
   >Σ</text>
 
-  <g transform="translate(60 60)">
-    <circle cx="0" cy="0" r="4" fill="#d2778e"/>
-    <text
-      x="14"
-      y="4"
-      font-family="ui-monospace, monospace"
-      font-size="11"
-      letter-spacing="4"
-      fill="#d2778e"
-    >IN STEALTH</text>
-  </g>
-
   <g transform="translate(60 445)">
     <text
       font-family="ui-monospace, monospace"
