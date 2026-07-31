@@ -12,7 +12,8 @@ export type Tag =
 // "Code"        — opens to public source on GitHub
 // "Private"     — neither a live URL nor public source available yet
 // "In progress" — being built, not ready to show
-export type Status = "Live" | "Code" | "Private" | "In progress";
+// "In stealth"  — being built, deliberately not showing the work yet
+export type Status = "Live" | "Code" | "Private" | "In progress" | "In stealth";
 
 export type Project = {
   id: string;
@@ -28,8 +29,20 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    id: "flashmind",
+    id: "sigma",
     index: "01",
+    title: "Sigma AI Education",
+    blurb:
+      "An AI platform and computing curriculum for children. Building in stealth.",
+    tags: ["Education", "AI"],
+    url: "#",
+    status: "In stealth",
+    year: "2026",
+    image: "/projects/sigma-stealth.svg",
+  },
+  {
+    id: "flashmind",
+    index: "02",
     title: "Huella",
     blurb:
       "AI-powered flashcards with spaced repetition and dual-coding visuals.",
@@ -41,7 +54,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "markmate",
-    index: "02",
+    index: "03",
     title: "MarkMate",
     blurb:
       "AI marking assistant for UK primary teachers. Upload student work, get instant marks, misconceptions, and class-level analytics.",
@@ -50,18 +63,6 @@ export const PROJECTS: Project[] = [
     status: "Live",
     year: "2026",
     image: "/projects/markmate.png",
-  },
-  {
-    id: "sigma",
-    index: "03",
-    title: "Sigma AI Academy",
-    blurb:
-      "AI platform for children — chat, image generation, and browser-based app building.",
-    tags: ["Education", "AI"],
-    url: "https://sigma-ai-academy.vercel.app",
-    status: "Live",
-    year: "2026",
-    image: "/projects/sigma.png",
   },
   {
     id: "padel-jersey",

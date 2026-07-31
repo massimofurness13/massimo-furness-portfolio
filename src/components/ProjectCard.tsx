@@ -4,6 +4,7 @@ import type { Project } from "@/data/projects";
 const STATUS_PILL_CLASSES: Record<Project["status"], string> = {
   Live: "bg-accent/15 text-accent",
   "In progress": "bg-accent/10 text-accent",
+  "In stealth": "bg-ink text-paper",
   Code: "bg-paper/85 text-ink",
   Private: "bg-paper/85 text-ink-muted",
 };
